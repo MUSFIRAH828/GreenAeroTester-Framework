@@ -1,0 +1,6 @@
+test_id,scenario_name,scenario_file,mandatory_flag,assurance_score,timeout_sec
+T01,normal_takeoff,scenarios/T01_takeoff.txt,0,6,120
+T02,normal_cruise,scenarios/T02_cruise.txt,0,4,120
+T03,landing,scenarios/T03_landing.txt,1,10,120
+T04,wind_disturbance,scenarios/T04_wind.txt,0,7,120
+T05,failure_case,scenarios/T05_failure.txt,1,9,120

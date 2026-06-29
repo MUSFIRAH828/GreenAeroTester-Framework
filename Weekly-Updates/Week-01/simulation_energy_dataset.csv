@@ -1,0 +1,16 @@
+test_id,scenario_name,scenario_file,run_no,mandatory_flag,assurance_score,start_time,end_time,runtime_sec,avg_cpu_percent,avg_power_watts,energy_wh,energy_joules,carbon_intensity_g_per_kwh,carbon_gco2,output_csv,return_code,result,measurement_source
+T01,normal_takeoff,scenarios/T01_takeoff.txt,1,0,6.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.001,0.0,15.0,3e-06,0.0124,400,1e-06,outputs/T01_run1.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T01,normal_takeoff,scenarios/T01_takeoff.txt,2,0,6.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.001,0.0,15.0,2e-06,0.0081,400,1e-06,outputs/T01_run2.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T01,normal_takeoff,scenarios/T01_takeoff.txt,3,0,6.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.004,400,0.0,outputs/T01_run3.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T02,normal_cruise,scenarios/T02_cruise.txt,1,0,4.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0034,400,0.0,outputs/T02_run1.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T02,normal_cruise,scenarios/T02_cruise.txt,2,0,4.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0052,400,1e-06,outputs/T02_run2.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T02,normal_cruise,scenarios/T02_cruise.txt,3,0,4.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0052,400,1e-06,outputs/T02_run3.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T03,landing,scenarios/T03_landing.txt,1,1,10.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,2e-06,0.0068,400,1e-06,outputs/T03_run1.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T03,landing,scenarios/T03_landing.txt,2,1,10.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0037,400,0.0,outputs/T03_run2.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T03,landing,scenarios/T03_landing.txt,3,1,10.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0044,400,0.0,outputs/T03_run3.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T04,wind_disturbance,scenarios/T04_wind.txt,1,0,7.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0042,400,0.0,outputs/T04_run1.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T04,wind_disturbance,scenarios/T04_wind.txt,2,0,7.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,2e-06,0.0055,400,1e-06,outputs/T04_run2.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T04,wind_disturbance,scenarios/T04_wind.txt,3,0,7.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,2e-06,0.0058,400,1e-06,outputs/T04_run3.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T05,failure_case,scenarios/T05_failure.txt,1,1,9.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0041,400,0.0,outputs/T05_run1.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T05,failure_case,scenarios/T05_failure.txt,2,1,9.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,1e-06,0.0051,400,1e-06,outputs/T05_run2.csv,-1,incomplete,cpu_based_estimate_for_pilot
+T05,failure_case,scenarios/T05_failure.txt,3,1,9.0,2026-06-29 06:29:04,2026-06-29 06:29:04,0.0,0.0,15.0,2e-06,0.0072,400,1e-06,outputs/T05_run3.csv,-1,incomplete,cpu_based_estimate_for_pilot
