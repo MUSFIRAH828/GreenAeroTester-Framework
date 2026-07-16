@@ -1,0 +1,4 @@
+# GreenAeroTest scenario placeholder: normal_cruise
+# This is a prototype placeholder file.
+# Replace with real FlightGear scenario/config content when available.
+scenario_name=normal_cruise

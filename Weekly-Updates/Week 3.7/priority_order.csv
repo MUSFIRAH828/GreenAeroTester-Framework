@@ -1,0 +1,6 @@
+priority_rank,test_id,scenario_name,mandatory_flag,assurance_score,avg_energy_wh,avg_energy_joules,avg_runtime_sec,avg_cpu_percent,avg_carbon_gco2,avg_cc_duration_sec,avg_cc_energy_kwh,avg_cc_emissions_kgco2,utility_score,total_runs,clean_runs,timeout_runs,selection_reason
+1,T03,landing,1,10,0.079076,284.6745,8.52,18.26,0.03163,2.3985,6.19e-06,2.73e-06,126.4603,9,0,0,mandatory
+2,T05,failure_case,1,9,0.084374,303.7471,8.93,17.46,0.033749,2.4539,6.33e-06,2.79e-06,106.6676,9,0,0,mandatory
+3,T04,wind_disturbance,0,7,0.063631,229.0705,8.64,10.8,0.025452,2.3951,6.15e-06,2.71e-06,110.01,9,0,0,utility_score
+4,T01,normal_takeoff,0,6,0.370131,1332.472,31.02,22.62,0.148053,23.8418,7.752e-05,3.416e-05,16.2105,14,0,1,utility_score
+5,T02,normal_cruise,0,4,0.34424,1239.2636,36.37,17.25,0.137696,30.1192,9.392e-05,4.138e-05,11.6198,12,0,2,utility_score

@@ -1,0 +1,4 @@
+# GreenAeroTest scenario placeholder: landing
+# This is a prototype placeholder file.
+# Replace with real FlightGear scenario/config content when available.
+scenario_name=landing

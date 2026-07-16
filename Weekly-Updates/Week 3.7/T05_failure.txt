@@ -1,0 +1,4 @@
+# GreenAeroTest scenario placeholder: failure_case
+# This is a prototype placeholder file.
+# Replace with real FlightGear scenario/config content when available.
+scenario_name=failure_case
