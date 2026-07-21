@@ -1,0 +1,6 @@
+﻿[2026-07-21T13:24:38.8560322+05:00] Launching FlightGear: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe --aircraft=c172p --airport=KSFO --runway=28L --fdm=jsbsim --wind=0@15 --visibility=9000 --disable-splash-screen --disable-sound --disable-random-objects --timeofday=noon
+[2026-07-21T13:28:41.0927356+05:00] Launching FlightGear: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe --aircraft=c172p --airport=KSFO --runway=28L --fdm=jsbsim --wind=0@15 --visibility=9000 --disable-splash-screen --disable-sound --disable-random-objects --timeofday=noon
+[2026-07-21T13:30:11.6297459+05:00] Duration elapsed, requesting graceful stop.
+[2026-07-21T13:30:21.6653011+05:00] Graceful stop timed out, forcing kill.
+    0.00 [INFO]:general    flightgear instance already running, switching to FG_HOME read-only.
+[2026-07-21T13:30:21.8958710+05:00] Run finished with status=pass exit_code=

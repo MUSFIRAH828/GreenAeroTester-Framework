@@ -1,0 +1,403 @@
+2026-07-20T14:46:53 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T14:46:53 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T14:46:53 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2020.3\bin\fgfs.exe
+2026-07-20T14:46:53 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T14:46:53 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (0 already completed, resuming).
+2026-07-20T14:46:53 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=1 run_id=R000001
+2026-07-20T14:46:53 | INFO     | executor | Starting run_id=R000001 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T14:46:55 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:47:00 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T14:47:24 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T14:47:24 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T14:47:24 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2020.3\bin\fgfs.exe
+2026-07-20T14:47:24 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T14:47:24 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (0 already completed, resuming).
+2026-07-20T14:47:24 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=1 run_id=R000002
+2026-07-20T14:47:24 | INFO     | executor | Starting run_id=R000002 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T14:47:25 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:47:35 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=2 run_id=R000003
+2026-07-20T14:47:35 | INFO     | executor | Starting run_id=R000003 test_id=T001 scenario_id=S001 attempt=2
+2026-07-20T14:47:37 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T14:47:47 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=3 run_id=R000004
+2026-07-20T14:47:47 | INFO     | executor | Starting run_id=R000004 test_id=T001 scenario_id=S001 attempt=3
+2026-07-20T14:47:48 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T14:47:58 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=4 run_id=R000005
+2026-07-20T14:47:58 | INFO     | executor | Starting run_id=R000005 test_id=T001 scenario_id=S001 attempt=4
+2026-07-20T14:47:59 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T14:48:09 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=5 run_id=R000006
+2026-07-20T14:48:09 | INFO     | executor | Starting run_id=R000006 test_id=T001 scenario_id=S001 attempt=5
+2026-07-20T14:48:11 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T14:48:21 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=6 run_id=R000007
+2026-07-20T14:48:21 | INFO     | executor | Starting run_id=R000007 test_id=T001 scenario_id=S001 attempt=6
+2026-07-20T14:48:22 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=6 returned 'crash'; will retry.
+2026-07-20T14:48:32 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=7 run_id=R000008
+2026-07-20T14:48:32 | INFO     | executor | Starting run_id=R000008 test_id=T001 scenario_id=S001 attempt=7
+2026-07-20T14:48:34 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=7 returned 'crash'; will retry.
+2026-07-20T14:48:44 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=8 run_id=R000009
+2026-07-20T14:48:44 | INFO     | executor | Starting run_id=R000009 test_id=T001 scenario_id=S001 attempt=8
+2026-07-20T14:48:45 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=8 returned 'crash'; will retry.
+2026-07-20T14:48:55 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=9 run_id=R000010
+2026-07-20T14:48:55 | INFO     | executor | Starting run_id=R000010 test_id=T001 scenario_id=S001 attempt=9
+2026-07-20T14:48:56 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=9 returned 'crash'; will retry.
+2026-07-20T14:49:06 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=10 run_id=R000011
+2026-07-20T14:49:06 | INFO     | executor | Starting run_id=R000011 test_id=T001 scenario_id=S001 attempt=10
+2026-07-20T14:49:08 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=10 returned 'crash'; will retry.
+2026-07-20T14:49:18 | ERROR    | experiment_runner | scenario=S001 run_no=1 exhausted 10 attempts without a usable outcome.
+2026-07-20T14:49:28 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=1 run_id=R000012
+2026-07-20T14:49:28 | INFO     | executor | Starting run_id=R000012 test_id=T002 scenario_id=S002 attempt=1
+2026-07-20T14:49:29 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:49:39 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=2 run_id=R000013
+2026-07-20T14:49:39 | INFO     | executor | Starting run_id=R000013 test_id=T002 scenario_id=S002 attempt=2
+2026-07-20T14:49:41 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T14:49:51 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=3 run_id=R000014
+2026-07-20T14:49:51 | INFO     | executor | Starting run_id=R000014 test_id=T002 scenario_id=S002 attempt=3
+2026-07-20T14:49:52 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T14:50:02 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=4 run_id=R000015
+2026-07-20T14:50:02 | INFO     | executor | Starting run_id=R000015 test_id=T002 scenario_id=S002 attempt=4
+2026-07-20T14:50:04 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T14:50:14 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=5 run_id=R000016
+2026-07-20T14:50:14 | INFO     | executor | Starting run_id=R000016 test_id=T002 scenario_id=S002 attempt=5
+2026-07-20T14:50:15 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T14:50:25 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=6 run_id=R000017
+2026-07-20T14:50:25 | INFO     | executor | Starting run_id=R000017 test_id=T002 scenario_id=S002 attempt=6
+2026-07-20T14:50:26 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=6 returned 'crash'; will retry.
+2026-07-20T14:50:36 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=7 run_id=R000018
+2026-07-20T14:50:36 | INFO     | executor | Starting run_id=R000018 test_id=T002 scenario_id=S002 attempt=7
+2026-07-20T14:50:38 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=7 returned 'crash'; will retry.
+2026-07-20T14:50:48 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=8 run_id=R000019
+2026-07-20T14:50:48 | INFO     | executor | Starting run_id=R000019 test_id=T002 scenario_id=S002 attempt=8
+2026-07-20T14:50:49 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=8 returned 'crash'; will retry.
+2026-07-20T14:50:59 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=9 run_id=R000020
+2026-07-20T14:50:59 | INFO     | executor | Starting run_id=R000020 test_id=T002 scenario_id=S002 attempt=9
+2026-07-20T14:51:01 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=9 returned 'crash'; will retry.
+2026-07-20T14:51:11 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=10 run_id=R000021
+2026-07-20T14:51:11 | INFO     | executor | Starting run_id=R000021 test_id=T002 scenario_id=S002 attempt=10
+2026-07-20T14:51:12 | WARNING  | experiment_runner | scenario=S002 run_no=1 attempt_no=10 returned 'crash'; will retry.
+2026-07-20T14:51:22 | ERROR    | experiment_runner | scenario=S002 run_no=1 exhausted 10 attempts without a usable outcome.
+2026-07-20T14:51:32 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=1 run_id=R000022
+2026-07-20T14:51:32 | INFO     | executor | Starting run_id=R000022 test_id=T003 scenario_id=S003 attempt=1
+2026-07-20T14:51:34 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:51:44 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=2 run_id=R000023
+2026-07-20T14:51:44 | INFO     | executor | Starting run_id=R000023 test_id=T003 scenario_id=S003 attempt=2
+2026-07-20T14:51:45 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T14:51:55 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=3 run_id=R000024
+2026-07-20T14:51:55 | INFO     | executor | Starting run_id=R000024 test_id=T003 scenario_id=S003 attempt=3
+2026-07-20T14:51:57 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T14:52:07 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=4 run_id=R000025
+2026-07-20T14:52:07 | INFO     | executor | Starting run_id=R000025 test_id=T003 scenario_id=S003 attempt=4
+2026-07-20T14:52:09 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T14:52:19 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=5 run_id=R000026
+2026-07-20T14:52:19 | INFO     | executor | Starting run_id=R000026 test_id=T003 scenario_id=S003 attempt=5
+2026-07-20T14:52:21 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T14:52:31 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=6 run_id=R000027
+2026-07-20T14:52:31 | INFO     | executor | Starting run_id=R000027 test_id=T003 scenario_id=S003 attempt=6
+2026-07-20T14:52:32 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=6 returned 'crash'; will retry.
+2026-07-20T14:52:42 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=7 run_id=R000028
+2026-07-20T14:52:42 | INFO     | executor | Starting run_id=R000028 test_id=T003 scenario_id=S003 attempt=7
+2026-07-20T14:52:44 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=7 returned 'crash'; will retry.
+2026-07-20T14:52:54 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=8 run_id=R000029
+2026-07-20T14:52:54 | INFO     | executor | Starting run_id=R000029 test_id=T003 scenario_id=S003 attempt=8
+2026-07-20T14:52:56 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=8 returned 'crash'; will retry.
+2026-07-20T14:53:06 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=9 run_id=R000030
+2026-07-20T14:53:06 | INFO     | executor | Starting run_id=R000030 test_id=T003 scenario_id=S003 attempt=9
+2026-07-20T14:53:08 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=9 returned 'crash'; will retry.
+2026-07-20T14:53:18 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=10 run_id=R000031
+2026-07-20T14:53:18 | INFO     | executor | Starting run_id=R000031 test_id=T003 scenario_id=S003 attempt=10
+2026-07-20T14:53:19 | WARNING  | experiment_runner | scenario=S003 run_no=1 attempt_no=10 returned 'crash'; will retry.
+2026-07-20T14:53:29 | ERROR    | experiment_runner | scenario=S003 run_no=1 exhausted 10 attempts without a usable outcome.
+2026-07-20T14:53:39 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=1 run_id=R000032
+2026-07-20T14:53:39 | INFO     | executor | Starting run_id=R000032 test_id=T004 scenario_id=S004 attempt=1
+2026-07-20T14:53:41 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:53:51 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=2 run_id=R000033
+2026-07-20T14:53:51 | INFO     | executor | Starting run_id=R000033 test_id=T004 scenario_id=S004 attempt=2
+2026-07-20T14:53:53 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T14:54:03 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=3 run_id=R000034
+2026-07-20T14:54:03 | INFO     | executor | Starting run_id=R000034 test_id=T004 scenario_id=S004 attempt=3
+2026-07-20T14:54:04 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T14:54:14 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=4 run_id=R000035
+2026-07-20T14:54:14 | INFO     | executor | Starting run_id=R000035 test_id=T004 scenario_id=S004 attempt=4
+2026-07-20T14:54:16 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T14:54:26 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=5 run_id=R000036
+2026-07-20T14:54:26 | INFO     | executor | Starting run_id=R000036 test_id=T004 scenario_id=S004 attempt=5
+2026-07-20T14:54:27 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T14:54:37 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=6 run_id=R000037
+2026-07-20T14:54:37 | INFO     | executor | Starting run_id=R000037 test_id=T004 scenario_id=S004 attempt=6
+2026-07-20T14:54:39 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=6 returned 'crash'; will retry.
+2026-07-20T14:54:49 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=7 run_id=R000038
+2026-07-20T14:54:49 | INFO     | executor | Starting run_id=R000038 test_id=T004 scenario_id=S004 attempt=7
+2026-07-20T14:54:50 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=7 returned 'crash'; will retry.
+2026-07-20T14:55:00 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=8 run_id=R000039
+2026-07-20T14:55:00 | INFO     | executor | Starting run_id=R000039 test_id=T004 scenario_id=S004 attempt=8
+2026-07-20T14:55:02 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=8 returned 'crash'; will retry.
+2026-07-20T14:55:12 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=9 run_id=R000040
+2026-07-20T14:55:12 | INFO     | executor | Starting run_id=R000040 test_id=T004 scenario_id=S004 attempt=9
+2026-07-20T14:55:14 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=9 returned 'crash'; will retry.
+2026-07-20T14:55:24 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=10 run_id=R000041
+2026-07-20T14:55:24 | INFO     | executor | Starting run_id=R000041 test_id=T004 scenario_id=S004 attempt=10
+2026-07-20T14:55:25 | WARNING  | experiment_runner | scenario=S004 run_no=1 attempt_no=10 returned 'crash'; will retry.
+2026-07-20T14:55:35 | ERROR    | experiment_runner | scenario=S004 run_no=1 exhausted 10 attempts without a usable outcome.
+2026-07-20T14:55:45 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=1 run_id=R000042
+2026-07-20T14:55:45 | INFO     | executor | Starting run_id=R000042 test_id=T005 scenario_id=S005 attempt=1
+2026-07-20T14:55:47 | WARNING  | experiment_runner | scenario=S005 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T14:55:57 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=2 run_id=R000043
+2026-07-20T14:55:57 | INFO     | executor | Starting run_id=R000043 test_id=T005 scenario_id=S005 attempt=2
+2026-07-20T14:55:59 | WARNING  | experiment_runner | scenario=S005 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T14:56:09 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=3 run_id=R000044
+2026-07-20T14:56:09 | INFO     | executor | Starting run_id=R000044 test_id=T005 scenario_id=S005 attempt=3
+2026-07-20T14:56:10 | WARNING  | experiment_runner | scenario=S005 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T14:56:20 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=4 run_id=R000045
+2026-07-20T14:56:20 | INFO     | executor | Starting run_id=R000045 test_id=T005 scenario_id=S005 attempt=4
+2026-07-20T14:56:22 | WARNING  | experiment_runner | scenario=S005 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T14:56:32 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=5 run_id=R000046
+2026-07-20T14:56:32 | INFO     | executor | Starting run_id=R000046 test_id=T005 scenario_id=S005 attempt=5
+2026-07-20T14:56:33 | WARNING  | experiment_runner | scenario=S005 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T14:56:34 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T15:05:37 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:05:37 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:05:37 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2020.3\bin\fgfs.exe
+2026-07-20T15:05:37 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:05:37 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (0 already completed, resuming).
+2026-07-20T15:05:37 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=1 run_id=R000047
+2026-07-20T15:05:37 | INFO     | executor | Starting run_id=R000047 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T15:05:38 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T15:05:48 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=2 run_id=R000048
+2026-07-20T15:05:48 | INFO     | executor | Starting run_id=R000048 test_id=T001 scenario_id=S001 attempt=2
+2026-07-20T15:05:50 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T15:06:00 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=3 run_id=R000049
+2026-07-20T15:06:00 | INFO     | executor | Starting run_id=R000049 test_id=T001 scenario_id=S001 attempt=3
+2026-07-20T15:06:02 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T15:06:12 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=4 run_id=R000050
+2026-07-20T15:06:12 | INFO     | executor | Starting run_id=R000050 test_id=T001 scenario_id=S001 attempt=4
+2026-07-20T15:06:14 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T15:06:21 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T15:06:34 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:06:34 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:06:34 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2020.3\bin\fgfs.exe
+2026-07-20T15:06:34 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:06:34 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (0 already completed, resuming).
+2026-07-20T15:06:34 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=1 run_id=R000051
+2026-07-20T15:06:34 | INFO     | executor | Starting run_id=R000051 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T15:06:35 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=1 returned 'crash'; will retry.
+2026-07-20T15:06:45 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=2 run_id=R000052
+2026-07-20T15:06:46 | INFO     | executor | Starting run_id=R000052 test_id=T001 scenario_id=S001 attempt=2
+2026-07-20T15:06:47 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=2 returned 'crash'; will retry.
+2026-07-20T15:06:57 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=3 run_id=R000053
+2026-07-20T15:06:57 | INFO     | executor | Starting run_id=R000053 test_id=T001 scenario_id=S001 attempt=3
+2026-07-20T15:06:59 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=3 returned 'crash'; will retry.
+2026-07-20T15:07:09 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=4 run_id=R000054
+2026-07-20T15:07:09 | INFO     | executor | Starting run_id=R000054 test_id=T001 scenario_id=S001 attempt=4
+2026-07-20T15:07:11 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=4 returned 'crash'; will retry.
+2026-07-20T15:07:21 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=5 run_id=R000055
+2026-07-20T15:07:21 | INFO     | executor | Starting run_id=R000055 test_id=T001 scenario_id=S001 attempt=5
+2026-07-20T15:07:22 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=5 returned 'crash'; will retry.
+2026-07-20T15:07:32 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=6 run_id=R000056
+2026-07-20T15:07:32 | INFO     | executor | Starting run_id=R000056 test_id=T001 scenario_id=S001 attempt=6
+2026-07-20T15:07:34 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=6 returned 'crash'; will retry.
+2026-07-20T15:07:44 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=7 run_id=R000057
+2026-07-20T15:07:44 | INFO     | executor | Starting run_id=R000057 test_id=T001 scenario_id=S001 attempt=7
+2026-07-20T15:07:45 | WARNING  | experiment_runner | scenario=S001 run_no=1 attempt_no=7 returned 'crash'; will retry.
+2026-07-20T15:07:52 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T15:10:47 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:10:47 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:10:47 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe
+2026-07-20T15:10:47 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:10:47 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (0 already completed, resuming).
+2026-07-20T15:10:47 | INFO     | experiment_runner | Executing scenario=S001 run_no=1 attempt_no=1 run_id=R000058
+2026-07-20T15:10:47 | INFO     | executor | Starting run_id=R000058 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T15:12:29 | INFO     | experiment_runner | scenario=S001 run_no=1 resolved as 'pass' after 1 attempt(s).
+2026-07-20T15:12:34 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T15:12:36 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:12:36 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:12:36 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe
+2026-07-20T15:12:36 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:12:36 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (1 already completed, resuming).
+2026-07-20T15:12:36 | INFO     | experiment_runner | Skipping S001 run_no=1 (already completed).
+2026-07-20T15:12:36 | INFO     | experiment_runner | Executing scenario=S002 run_no=1 attempt_no=1 run_id=R000059
+2026-07-20T15:12:36 | INFO     | executor | Starting run_id=R000059 test_id=T002 scenario_id=S002 attempt=1
+2026-07-20T15:12:49 | INFO     | experiment_runner | scenario=S002 run_no=1 resolved as 'fail' after 1 attempt(s).
+2026-07-20T15:12:50 | WARNING  | run_pipeline | Pipeline interrupted by user. Progress has been saved; re-run to resume.
+2026-07-20T15:12:58 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:12:58 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:12:58 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe
+2026-07-20T15:12:58 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:12:58 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (2 already completed, resuming).
+2026-07-20T15:12:58 | INFO     | experiment_runner | Skipping S001 run_no=1 (already completed).
+2026-07-20T15:12:58 | INFO     | experiment_runner | Skipping S002 run_no=1 (already completed).
+2026-07-20T15:12:58 | INFO     | experiment_runner | Executing scenario=S003 run_no=1 attempt_no=1 run_id=R000060
+2026-07-20T15:12:58 | INFO     | executor | Starting run_id=R000060 test_id=T003 scenario_id=S003 attempt=1
+2026-07-20T15:13:09 | INFO     | experiment_runner | scenario=S003 run_no=1 resolved as 'fail' after 1 attempt(s).
+2026-07-20T15:13:19 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=1 run_id=R000061
+2026-07-20T15:13:19 | INFO     | executor | Starting run_id=R000061 test_id=T004 scenario_id=S004 attempt=1
+2026-07-20T15:24:19 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-20T15:24:19 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-20T15:24:19 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe
+2026-07-20T15:24:19 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-20T15:24:19 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (3 already completed, resuming).
+2026-07-20T15:24:19 | INFO     | experiment_runner | Skipping S001 run_no=1 (already completed).
+2026-07-20T15:24:19 | INFO     | experiment_runner | Skipping S002 run_no=1 (already completed).
+2026-07-20T15:24:19 | INFO     | experiment_runner | Skipping S003 run_no=1 (already completed).
+2026-07-20T15:24:19 | INFO     | experiment_runner | Executing scenario=S004 run_no=1 attempt_no=1 run_id=R000061
+2026-07-20T15:24:19 | INFO     | executor | Starting run_id=R000061 test_id=T004 scenario_id=S004 attempt=1
+2026-07-20T15:26:02 | INFO     | experiment_runner | scenario=S004 run_no=1 resolved as 'pass' after 1 attempt(s).
+2026-07-20T15:26:12 | INFO     | experiment_runner | Executing scenario=S005 run_no=1 attempt_no=1 run_id=R000062
+2026-07-20T15:26:12 | INFO     | executor | Starting run_id=R000062 test_id=T005 scenario_id=S005 attempt=1
+2026-07-20T15:27:54 | INFO     | experiment_runner | scenario=S005 run_no=1 resolved as 'pass' after 1 attempt(s).
+2026-07-20T15:28:04 | INFO     | experiment_runner | Executing scenario=S001 run_no=2 attempt_no=1 run_id=R000063
+2026-07-20T15:28:04 | INFO     | executor | Starting run_id=R000063 test_id=T001 scenario_id=S001 attempt=1
+2026-07-20T15:29:48 | INFO     | experiment_runner | scenario=S001 run_no=2 resolved as 'pass' after 1 attempt(s).
+2026-07-20T15:29:58 | INFO     | experiment_runner | Executing scenario=S002 run_no=2 attempt_no=1 run_id=R000064
+2026-07-20T15:29:58 | INFO     | executor | Starting run_id=R000064 test_id=T002 scenario_id=S002 attempt=1
+2026-07-20T15:40:37 | WARNING  | executor | run_id=R000064 timed out after 180s
+2026-07-20T15:40:37 | WARNING  | experiment_runner | scenario=S002 run_no=2 attempt_no=1 returned 'timeout'; will retry.
+2026-07-20T15:40:47 | INFO     | experiment_runner | Executing scenario=S002 run_no=2 attempt_no=2 run_id=R000065
+2026-07-20T15:40:47 | INFO     | executor | Starting run_id=R000065 test_id=T002 scenario_id=S002 attempt=2
+2026-07-20T15:42:29 | INFO     | experiment_runner | scenario=S002 run_no=2 resolved as 'pass' after 2 attempt(s).
+2026-07-20T15:42:39 | INFO     | experiment_runner | Executing scenario=S003 run_no=2 attempt_no=1 run_id=R000066
+2026-07-20T15:42:39 | INFO     | executor | Starting run_id=R000066 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T13:24:26 | WARNING  | executor | run_id=R000066 timed out after 180s
+2026-07-21T13:24:26 | WARNING  | experiment_runner | scenario=S003 run_no=2 attempt_no=1 returned 'timeout'; will retry.
+2026-07-21T13:24:36 | INFO     | experiment_runner | Executing scenario=S003 run_no=2 attempt_no=2 run_id=R000067
+2026-07-21T13:24:36 | INFO     | executor | Starting run_id=R000067 test_id=T003 scenario_id=S003 attempt=2
+2026-07-21T13:28:39 | INFO     | run_pipeline | GreenAeroTest pilot pipeline starting.
+2026-07-21T13:28:39 | INFO     | run_pipeline | Project root: C:\Users\Home 12\Music\Test-scenarios
+2026-07-21T13:28:39 | INFO     | run_pipeline | FlightGear executable: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe
+2026-07-21T13:28:39 | INFO     | run_pipeline | Plan: 5 scenarios x 10 repetitions = 50 total runs.
+2026-07-21T13:28:39 | INFO     | experiment_runner | Starting pilot execution: 5 scenarios x 10 repetitions = 50 planned runs (7 already completed, resuming).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S001 run_no=1 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S002 run_no=1 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S003 run_no=1 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S004 run_no=1 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S005 run_no=1 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S001 run_no=2 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Skipping S002 run_no=2 (already completed).
+2026-07-21T13:28:39 | INFO     | experiment_runner | Executing scenario=S003 run_no=2 attempt_no=1 run_id=R000067
+2026-07-21T13:28:39 | INFO     | executor | Starting run_id=R000067 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T13:30:22 | INFO     | experiment_runner | scenario=S003 run_no=2 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:30:32 | INFO     | experiment_runner | Executing scenario=S004 run_no=2 attempt_no=1 run_id=R000068
+2026-07-21T13:30:32 | INFO     | executor | Starting run_id=R000068 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T13:32:15 | INFO     | experiment_runner | scenario=S004 run_no=2 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:32:25 | INFO     | experiment_runner | Executing scenario=S005 run_no=2 attempt_no=1 run_id=R000069
+2026-07-21T13:32:25 | INFO     | executor | Starting run_id=R000069 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T13:34:08 | INFO     | experiment_runner | scenario=S005 run_no=2 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:34:18 | INFO     | experiment_runner | Executing scenario=S001 run_no=3 attempt_no=1 run_id=R000070
+2026-07-21T13:34:18 | INFO     | executor | Starting run_id=R000070 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T13:36:00 | INFO     | experiment_runner | scenario=S001 run_no=3 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:36:10 | INFO     | experiment_runner | Executing scenario=S002 run_no=3 attempt_no=1 run_id=R000071
+2026-07-21T13:36:10 | INFO     | executor | Starting run_id=R000071 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T13:37:53 | INFO     | experiment_runner | scenario=S002 run_no=3 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:38:03 | INFO     | experiment_runner | Executing scenario=S003 run_no=3 attempt_no=1 run_id=R000072
+2026-07-21T13:38:03 | INFO     | executor | Starting run_id=R000072 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T13:39:45 | INFO     | experiment_runner | scenario=S003 run_no=3 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:39:55 | INFO     | experiment_runner | Executing scenario=S004 run_no=3 attempt_no=1 run_id=R000073
+2026-07-21T13:39:55 | INFO     | executor | Starting run_id=R000073 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T13:41:37 | INFO     | experiment_runner | scenario=S004 run_no=3 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:41:47 | INFO     | experiment_runner | Executing scenario=S005 run_no=3 attempt_no=1 run_id=R000074
+2026-07-21T13:41:47 | INFO     | executor | Starting run_id=R000074 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T13:43:31 | INFO     | experiment_runner | scenario=S005 run_no=3 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:43:41 | INFO     | experiment_runner | Executing scenario=S001 run_no=4 attempt_no=1 run_id=R000075
+2026-07-21T13:43:41 | INFO     | executor | Starting run_id=R000075 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T13:45:23 | INFO     | experiment_runner | scenario=S001 run_no=4 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:45:33 | INFO     | experiment_runner | Executing scenario=S002 run_no=4 attempt_no=1 run_id=R000076
+2026-07-21T13:45:33 | INFO     | executor | Starting run_id=R000076 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T13:47:15 | INFO     | experiment_runner | scenario=S002 run_no=4 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:47:25 | INFO     | experiment_runner | Executing scenario=S003 run_no=4 attempt_no=1 run_id=R000077
+2026-07-21T13:47:25 | INFO     | executor | Starting run_id=R000077 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T13:49:07 | INFO     | experiment_runner | scenario=S003 run_no=4 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:49:17 | INFO     | experiment_runner | Executing scenario=S004 run_no=4 attempt_no=1 run_id=R000078
+2026-07-21T13:49:17 | INFO     | executor | Starting run_id=R000078 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T13:51:00 | INFO     | experiment_runner | scenario=S004 run_no=4 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:51:10 | INFO     | experiment_runner | Executing scenario=S005 run_no=4 attempt_no=1 run_id=R000079
+2026-07-21T13:51:10 | INFO     | executor | Starting run_id=R000079 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T13:52:52 | INFO     | experiment_runner | scenario=S005 run_no=4 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:53:02 | INFO     | experiment_runner | Executing scenario=S001 run_no=5 attempt_no=1 run_id=R000080
+2026-07-21T13:53:02 | INFO     | executor | Starting run_id=R000080 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T13:54:44 | INFO     | experiment_runner | scenario=S001 run_no=5 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:54:54 | INFO     | experiment_runner | Executing scenario=S002 run_no=5 attempt_no=1 run_id=R000081
+2026-07-21T13:54:54 | INFO     | executor | Starting run_id=R000081 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T13:56:36 | INFO     | experiment_runner | scenario=S002 run_no=5 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:56:46 | INFO     | experiment_runner | Executing scenario=S003 run_no=5 attempt_no=1 run_id=R000082
+2026-07-21T13:56:46 | INFO     | executor | Starting run_id=R000082 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T13:58:29 | INFO     | experiment_runner | scenario=S003 run_no=5 resolved as 'pass' after 1 attempt(s).
+2026-07-21T13:58:39 | INFO     | experiment_runner | Executing scenario=S004 run_no=5 attempt_no=1 run_id=R000083
+2026-07-21T13:58:39 | INFO     | executor | Starting run_id=R000083 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:00:21 | INFO     | experiment_runner | scenario=S004 run_no=5 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:00:31 | INFO     | experiment_runner | Executing scenario=S005 run_no=5 attempt_no=1 run_id=R000084
+2026-07-21T14:00:31 | INFO     | executor | Starting run_id=R000084 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:02:14 | INFO     | experiment_runner | scenario=S005 run_no=5 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:02:24 | INFO     | experiment_runner | Executing scenario=S001 run_no=6 attempt_no=1 run_id=R000085
+2026-07-21T14:02:24 | INFO     | executor | Starting run_id=R000085 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T14:04:08 | INFO     | experiment_runner | scenario=S001 run_no=6 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:04:18 | INFO     | experiment_runner | Executing scenario=S002 run_no=6 attempt_no=1 run_id=R000086
+2026-07-21T14:04:18 | INFO     | executor | Starting run_id=R000086 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T14:06:01 | INFO     | experiment_runner | scenario=S002 run_no=6 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:06:11 | INFO     | experiment_runner | Executing scenario=S003 run_no=6 attempt_no=1 run_id=R000087
+2026-07-21T14:06:11 | INFO     | executor | Starting run_id=R000087 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T14:07:53 | INFO     | experiment_runner | scenario=S003 run_no=6 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:08:03 | INFO     | experiment_runner | Executing scenario=S004 run_no=6 attempt_no=1 run_id=R000088
+2026-07-21T14:08:03 | INFO     | executor | Starting run_id=R000088 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:09:45 | INFO     | experiment_runner | scenario=S004 run_no=6 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:09:55 | INFO     | experiment_runner | Executing scenario=S005 run_no=6 attempt_no=1 run_id=R000089
+2026-07-21T14:09:55 | INFO     | executor | Starting run_id=R000089 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:11:39 | INFO     | experiment_runner | scenario=S005 run_no=6 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:11:49 | INFO     | experiment_runner | Executing scenario=S001 run_no=7 attempt_no=1 run_id=R000090
+2026-07-21T14:11:49 | INFO     | executor | Starting run_id=R000090 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T14:13:31 | INFO     | experiment_runner | scenario=S001 run_no=7 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:13:41 | INFO     | experiment_runner | Executing scenario=S002 run_no=7 attempt_no=1 run_id=R000091
+2026-07-21T14:13:41 | INFO     | executor | Starting run_id=R000091 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T14:15:23 | INFO     | experiment_runner | scenario=S002 run_no=7 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:15:33 | INFO     | experiment_runner | Executing scenario=S003 run_no=7 attempt_no=1 run_id=R000092
+2026-07-21T14:15:33 | INFO     | executor | Starting run_id=R000092 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T14:17:16 | INFO     | experiment_runner | scenario=S003 run_no=7 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:17:26 | INFO     | experiment_runner | Executing scenario=S004 run_no=7 attempt_no=1 run_id=R000093
+2026-07-21T14:17:26 | INFO     | executor | Starting run_id=R000093 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:19:08 | INFO     | experiment_runner | scenario=S004 run_no=7 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:19:18 | INFO     | experiment_runner | Executing scenario=S005 run_no=7 attempt_no=1 run_id=R000094
+2026-07-21T14:19:18 | INFO     | executor | Starting run_id=R000094 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:21:00 | INFO     | experiment_runner | scenario=S005 run_no=7 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:21:10 | INFO     | experiment_runner | Executing scenario=S001 run_no=8 attempt_no=1 run_id=R000095
+2026-07-21T14:21:10 | INFO     | executor | Starting run_id=R000095 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T14:22:52 | INFO     | experiment_runner | scenario=S001 run_no=8 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:23:02 | INFO     | experiment_runner | Executing scenario=S002 run_no=8 attempt_no=1 run_id=R000096
+2026-07-21T14:23:02 | INFO     | executor | Starting run_id=R000096 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T14:24:44 | INFO     | experiment_runner | scenario=S002 run_no=8 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:24:54 | INFO     | experiment_runner | Executing scenario=S003 run_no=8 attempt_no=1 run_id=R000097
+2026-07-21T14:24:54 | INFO     | executor | Starting run_id=R000097 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T14:26:36 | INFO     | experiment_runner | scenario=S003 run_no=8 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:26:46 | INFO     | experiment_runner | Executing scenario=S004 run_no=8 attempt_no=1 run_id=R000098
+2026-07-21T14:26:46 | INFO     | executor | Starting run_id=R000098 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:28:28 | INFO     | experiment_runner | scenario=S004 run_no=8 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:28:38 | INFO     | experiment_runner | Executing scenario=S005 run_no=8 attempt_no=1 run_id=R000099
+2026-07-21T14:28:38 | INFO     | executor | Starting run_id=R000099 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:30:20 | INFO     | experiment_runner | scenario=S005 run_no=8 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:30:30 | INFO     | experiment_runner | Executing scenario=S001 run_no=9 attempt_no=1 run_id=R000100
+2026-07-21T14:30:30 | INFO     | executor | Starting run_id=R000100 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T14:32:12 | INFO     | experiment_runner | scenario=S001 run_no=9 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:32:22 | INFO     | experiment_runner | Executing scenario=S002 run_no=9 attempt_no=1 run_id=R000101
+2026-07-21T14:32:22 | INFO     | executor | Starting run_id=R000101 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T14:34:04 | INFO     | experiment_runner | scenario=S002 run_no=9 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:34:14 | INFO     | experiment_runner | Executing scenario=S003 run_no=9 attempt_no=1 run_id=R000102
+2026-07-21T14:34:14 | INFO     | executor | Starting run_id=R000102 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T14:35:57 | INFO     | experiment_runner | scenario=S003 run_no=9 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:36:07 | INFO     | experiment_runner | Executing scenario=S004 run_no=9 attempt_no=1 run_id=R000103
+2026-07-21T14:36:07 | INFO     | executor | Starting run_id=R000103 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:37:49 | INFO     | experiment_runner | scenario=S004 run_no=9 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:37:59 | INFO     | experiment_runner | Executing scenario=S005 run_no=9 attempt_no=1 run_id=R000104
+2026-07-21T14:37:59 | INFO     | executor | Starting run_id=R000104 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:39:41 | INFO     | experiment_runner | scenario=S005 run_no=9 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:39:51 | INFO     | experiment_runner | Executing scenario=S001 run_no=10 attempt_no=1 run_id=R000105
+2026-07-21T14:39:51 | INFO     | executor | Starting run_id=R000105 test_id=T001 scenario_id=S001 attempt=1
+2026-07-21T14:41:33 | INFO     | experiment_runner | scenario=S001 run_no=10 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:41:43 | INFO     | experiment_runner | Executing scenario=S002 run_no=10 attempt_no=1 run_id=R000106
+2026-07-21T14:41:43 | INFO     | executor | Starting run_id=R000106 test_id=T002 scenario_id=S002 attempt=1
+2026-07-21T14:43:25 | INFO     | experiment_runner | scenario=S002 run_no=10 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:43:35 | INFO     | experiment_runner | Executing scenario=S003 run_no=10 attempt_no=1 run_id=R000107
+2026-07-21T14:43:35 | INFO     | executor | Starting run_id=R000107 test_id=T003 scenario_id=S003 attempt=1
+2026-07-21T14:45:18 | INFO     | experiment_runner | scenario=S003 run_no=10 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:45:28 | INFO     | experiment_runner | Executing scenario=S004 run_no=10 attempt_no=1 run_id=R000108
+2026-07-21T14:45:28 | INFO     | executor | Starting run_id=R000108 test_id=T004 scenario_id=S004 attempt=1
+2026-07-21T14:47:10 | INFO     | experiment_runner | scenario=S004 run_no=10 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:47:20 | INFO     | experiment_runner | Executing scenario=S005 run_no=10 attempt_no=1 run_id=R000109
+2026-07-21T14:47:20 | INFO     | executor | Starting run_id=R000109 test_id=T005 scenario_id=S005 attempt=1
+2026-07-21T14:49:02 | INFO     | experiment_runner | scenario=S005 run_no=10 resolved as 'pass' after 1 attempt(s).
+2026-07-21T14:49:12 | INFO     | experiment_runner | Pilot execution complete: 50 planned executions processed.
+2026-07-21T14:49:12 | INFO     | run_pipeline | GreenAeroTest pilot pipeline finished successfully.

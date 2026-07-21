@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+    <meta>
+        <scenario_id>S004</scenario_id>
+        <test_id>T004</test_id>
+        <flight_phase_code>P06</flight_phase_code>
+        <flight_phase_name>Approach</flight_phase_name>
+        <weather_code>W04</weather_code>
+        <weather_name>Gust/Turbulence</weather_name>
+        <mode>Faulted</mode>
+        <description>Final approach under moderate gust and turbulence with injected airspeed sensor noise.</description>
+    </meta>
+
+    <aircraft>
+        <aircraft_id>c172p</aircraft_id>
+        <fdm>jsbsim</fdm>
+    </aircraft>
+
+    <initial_conditions>
+        <airport>KSFO</airport>
+        <runway>28L</runway>
+        <altitude_ft>1200</altitude_ft>
+        <airspeed_kt>75</airspeed_kt>
+        <heading_deg>280</heading_deg>
+        <on_ground>false</on_ground>
+    </initial_conditions>
+
+    <environment>
+        <wind_speed_kt>22</wind_speed_kt>
+        <wind_dir_deg>250</wind_dir_deg>
+        <turbulence_norm>0.45</turbulence_norm>
+        <visibility_m>8000</visibility_m>
+        <precipitation>none</precipitation>
+        <cloud_layer>broken</cloud_layer>
+    </environment>
+
+    <fault_injection enabled="true">
+        <type>airspeed_sensor_noise</type>
+        <target_subsystem>pitot_static</target_subsystem>
+        <severity_norm>0.35</severity_norm>
+    </fault_injection>
+
+    <run_parameters>
+        <duration_sec>90</duration_sec>
+        <telemetry_rate_hz>10</telemetry_rate_hz>
+    </run_parameters>
+</scenario>

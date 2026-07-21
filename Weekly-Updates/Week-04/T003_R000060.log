@@ -1,0 +1,24 @@
+﻿[2026-07-20T15:12:59.9337728+05:00] Launching FlightGear: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe --aircraft=c172p --airport=KSFO --runway=28L --fdm=jsbsim --wind=0@15 --visibility=9000 --disable-splash-screen --disable-sound --disable-random-objects --timeofday=noon
+Now checking for plug-in osgPlugins-3.6.5/osgdb_nvtt.dll
+    0.15 [ALRT]:view       Creating osgViewer::CompositeViewer
+    0.16 [ALRT]:general    affinity=none
+    0.16 [ALRT]:view       Calling composite_viewer->setUseConfigureAffinity() with flag=0
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeManifestFile::FindManifestFiles - failed to find active runtime file in registry
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - unknown error
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - failed to load a runtime
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed to find default runtime with RuntimeInterface::LoadRuntime()
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed querying extension properties
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeManifestFile::FindManifestFiles - failed to find active runtime file in registry
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - unknown error
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - failed to load a runtime
+    0.35 [WARN]:osg        osgXR: Failed to count OpenXR instance extensions: -51
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed to find default runtime with RuntimeInterface::LoadRuntime()
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed querying extension properties
+    0.37 [WARN]:osg        osgXR: Failed to count OpenXR instance extensions: -51
+    0.37 [WARN]:general    Enabling ATI/AMD viewport hack
+    0.42 [ALRT]:view       affinity=none
+    8.32 [ALRT]:event      Shutdown of non-init-ed group:
+    8.32 [ALRT]:event      Shutdown of non-init-ed group:
+    8.32 [ALRT]:event      Shutdown of non-init-ed group:
+    8.32 [ALRT]:event      Shutdown of non-init-ed group:
+[2026-07-20T15:13:09.7081196+05:00] Run finished with status=fail exit_code=

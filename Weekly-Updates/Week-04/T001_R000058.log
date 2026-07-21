@@ -1,0 +1,21 @@
+﻿[2026-07-20T15:10:48.4628617+05:00] Launching FlightGear: C:\Program Files\FlightGear 2024.1\bin\fgfs.exe --aircraft=c172p --airport=KSFO --runway=28L --fdm=jsbsim --wind=0@0 --visibility=10000 --disable-splash-screen --disable-sound --disable-random-objects --timeofday=noon
+[2026-07-20T15:12:18.7093987+05:00] Duration elapsed, requesting graceful stop.
+[2026-07-20T15:12:28.7559241+05:00] Graceful stop timed out, forcing kill.
+    0.17 [ALRT]:view       Creating osgViewer::CompositeViewer
+    0.18 [ALRT]:general    affinity=none
+    0.18 [ALRT]:view       Calling composite_viewer->setUseConfigureAffinity() with flag=0
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeManifestFile::FindManifestFiles - failed to find active runtime file in registry
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - unknown error
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - failed to load a runtime
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed to find default runtime with RuntimeInterface::LoadRuntime()
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed querying extension properties
+    0.39 [WARN]:osg        osgXR: Failed to count OpenXR instance extensions: -51
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeManifestFile::FindManifestFiles - failed to find active runtime file in registry
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - unknown error
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : RuntimeInterface::LoadRuntimes - failed to load a runtime
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed to find default runtime with RuntimeInterface::LoadRuntime()
+Error [GENERAL | xrEnumerateInstanceExtensionProperties | OpenXR-Loader] : Failed querying extension properties
+    0.40 [WARN]:osg        osgXR: Failed to count OpenXR instance extensions: -51
+    0.40 [WARN]:general    Enabling ATI/AMD viewport hack
+    0.46 [ALRT]:view       affinity=none
+[2026-07-20T15:12:28.9213281+05:00] Run finished with status=pass exit_code=

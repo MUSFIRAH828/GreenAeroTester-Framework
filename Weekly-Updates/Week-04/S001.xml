@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Scenario S001 - Takeoff / Calm / Nominal
+  Consumed by scripts/run_scenario.ps1 to launch FlightGear with the
+  matching aircraft, airport, runway and property set overrides.
+  Field names intentionally mirror JSBSim initialization file conventions
+  so this file can be adapted directly into a JSBSim initialize block
+  or a FlightGear config file if your local FlightGear/JSBSim install
+  uses a different scenario schema.
+-->
+<scenario>
+    <meta>
+        <scenario_id>S001</scenario_id>
+        <test_id>T001</test_id>
+        <flight_phase_code>P01</flight_phase_code>
+        <flight_phase_name>Takeoff</flight_phase_name>
+        <weather_code>W01</weather_code>
+        <weather_name>Calm</weather_name>
+        <mode>Nominal</mode>
+        <description>Standard takeoff roll and rotation under calm wind conditions, no injected faults.</description>
+    </meta>
+
+    <aircraft>
+        <aircraft_id>c172p</aircraft_id>
+        <fdm>jsbsim</fdm>
+    </aircraft>
+
+    <initial_conditions>
+        <airport>KSFO</airport>
+        <runway>28L</runway>
+        <altitude_ft>13</altitude_ft>
+        <airspeed_kt>0</airspeed_kt>
+        <heading_deg>280</heading_deg>
+        <on_ground>true</on_ground>
+    </initial_conditions>
+
+    <environment>
+        <wind_speed_kt>0</wind_speed_kt>
+        <wind_dir_deg>0</wind_dir_deg>
+        <turbulence_norm>0.0</turbulence_norm>
+        <visibility_m>10000</visibility_m>
+        <precipitation>none</precipitation>
+        <cloud_layer>clear</cloud_layer>
+    </environment>
+
+    <fault_injection enabled="false">
+        <type>none</type>
+        <target_subsystem/>
+        <severity_norm>0.0</severity_norm>
+    </fault_injection>
+
+    <run_parameters>
+        <duration_sec>90</duration_sec>
+        <telemetry_rate_hz>10</telemetry_rate_hz>
+    </run_parameters>
+</scenario>

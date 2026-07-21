@@ -1,0 +1,6 @@
+scenario_id,test_id,flight_phase_code,flight_phase_name,weather_code,weather_name,mode,scenario_file
+S001,T001,P01,Takeoff,W01,Calm,Nominal,S001.xml
+S002,T002,P02,Climb,W02,Light wind,Nominal,S002.xml
+S003,T003,P03,Cruise,W03,Crosswind,Nominal,S003.xml
+S004,T004,P06,Approach,W04,Gust/Turbulence,Faulted,S004.xml
+S005,T005,P07,Landing,W05,Low visibility/Rain,Faulted,S005.xml
