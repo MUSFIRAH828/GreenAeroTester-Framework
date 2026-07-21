@@ -1,0 +1,27 @@
+# GreenAeroTest backend - Python dependencies
+# Python version target: 3.13
+#
+# Phase 1 (scenario generation) uses only the standard library.
+# The packages below are declared now so the requirements file matches the
+# full project architecture from the spec; they will actually be imported
+# starting in the phases noted alongside each one. Keeping them pinned here
+# avoids environment drift between phases.
+
+# --- Phase 1: Scenario generation ------------------------------------------
+# (standard library only: csv, dataclasses, enum, pathlib, logging)
+
+# --- Phase 2: Execution & energy collection ---------------------------------
+psutil==6.1.0            # CPU / memory sampling during runs
+pyyaml==6.0.2             # configs/*.yaml loading
+
+# --- Phase 3: Data processing, statistics, assurance scoring ----------------
+pandas==2.2.3
+numpy==2.1.3
+
+# --- Phase 4: Dashboard & reporting -----------------------------------------
+streamlit==1.40.1
+matplotlib==3.9.2
+reportlab==4.2.5
+
+# --- Testing ------------------------------------------------------------
+pytest==8.3.3

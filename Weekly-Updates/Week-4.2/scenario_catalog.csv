@@ -1,0 +1,101 @@
+scenario_id,test_id,flight_phase_code,flight_phase_name,weather_code,weather_name,mode_code,mode_name,is_faulted,applied_fault,scenario_file_name,output_dir
+S0001,T0001,P01,Takeoff,W01,Calm,M0,Nominal,False,,S0001_P01_W01_M0.xml,outputs/T0001
+S0002,T0002,P01,Takeoff,W01,Calm,M1,Faulted,True,Engine response degradation,S0002_P01_W01_M1.xml,outputs/T0002
+S0003,T0003,P01,Takeoff,W02,Light wind,M0,Nominal,False,,S0003_P01_W02_M0.xml,outputs/T0003
+S0004,T0004,P01,Takeoff,W02,Light wind,M1,Faulted,True,Engine response degradation,S0004_P01_W02_M1.xml,outputs/T0004
+S0005,T0005,P01,Takeoff,W03,Crosswind,M0,Nominal,False,,S0005_P01_W03_M0.xml,outputs/T0005
+S0006,T0006,P01,Takeoff,W03,Crosswind,M1,Faulted,True,Engine response degradation,S0006_P01_W03_M1.xml,outputs/T0006
+S0007,T0007,P01,Takeoff,W04,Gust / turbulence,M0,Nominal,False,,S0007_P01_W04_M0.xml,outputs/T0007
+S0008,T0008,P01,Takeoff,W04,Gust / turbulence,M1,Faulted,True,Engine response degradation,S0008_P01_W04_M1.xml,outputs/T0008
+S0009,T0009,P01,Takeoff,W05,Low visibility / rain,M0,Nominal,False,,S0009_P01_W05_M0.xml,outputs/T0009
+S0010,T0010,P01,Takeoff,W05,Low visibility / rain,M1,Faulted,True,Engine response degradation,S0010_P01_W05_M1.xml,outputs/T0010
+S0011,T0011,P02,Climb,W01,Calm,M0,Nominal,False,,S0011_P02_W01_M0.xml,outputs/T0011
+S0012,T0012,P02,Climb,W01,Calm,M1,Faulted,True,Elevator/control-surface degradation,S0012_P02_W01_M1.xml,outputs/T0012
+S0013,T0013,P02,Climb,W02,Light wind,M0,Nominal,False,,S0013_P02_W02_M0.xml,outputs/T0013
+S0014,T0014,P02,Climb,W02,Light wind,M1,Faulted,True,Elevator/control-surface degradation,S0014_P02_W02_M1.xml,outputs/T0014
+S0015,T0015,P02,Climb,W03,Crosswind,M0,Nominal,False,,S0015_P02_W03_M0.xml,outputs/T0015
+S0016,T0016,P02,Climb,W03,Crosswind,M1,Faulted,True,Elevator/control-surface degradation,S0016_P02_W03_M1.xml,outputs/T0016
+S0017,T0017,P02,Climb,W04,Gust / turbulence,M0,Nominal,False,,S0017_P02_W04_M0.xml,outputs/T0017
+S0018,T0018,P02,Climb,W04,Gust / turbulence,M1,Faulted,True,Elevator/control-surface degradation,S0018_P02_W04_M1.xml,outputs/T0018
+S0019,T0019,P02,Climb,W05,Low visibility / rain,M0,Nominal,False,,S0019_P02_W05_M0.xml,outputs/T0019
+S0020,T0020,P02,Climb,W05,Low visibility / rain,M1,Faulted,True,Elevator/control-surface degradation,S0020_P02_W05_M1.xml,outputs/T0020
+S0021,T0021,P03,Cruise,W01,Calm,M0,Nominal,False,,S0021_P03_W01_M0.xml,outputs/T0021
+S0022,T0022,P03,Cruise,W01,Calm,M1,Faulted,True,GPS loss or navigation dropout,S0022_P03_W01_M1.xml,outputs/T0022
+S0023,T0023,P03,Cruise,W02,Light wind,M0,Nominal,False,,S0023_P03_W02_M0.xml,outputs/T0023
+S0024,T0024,P03,Cruise,W02,Light wind,M1,Faulted,True,GPS loss or navigation dropout,S0024_P03_W02_M1.xml,outputs/T0024
+S0025,T0025,P03,Cruise,W03,Crosswind,M0,Nominal,False,,S0025_P03_W03_M0.xml,outputs/T0025
+S0026,T0026,P03,Cruise,W03,Crosswind,M1,Faulted,True,GPS loss or navigation dropout,S0026_P03_W03_M1.xml,outputs/T0026
+S0027,T0027,P03,Cruise,W04,Gust / turbulence,M0,Nominal,False,,S0027_P03_W04_M0.xml,outputs/T0027
+S0028,T0028,P03,Cruise,W04,Gust / turbulence,M1,Faulted,True,GPS loss or navigation dropout,S0028_P03_W04_M1.xml,outputs/T0028
+S0029,T0029,P03,Cruise,W05,Low visibility / rain,M0,Nominal,False,,S0029_P03_W05_M0.xml,outputs/T0029
+S0030,T0030,P03,Cruise,W05,Low visibility / rain,M1,Faulted,True,GPS loss or navigation dropout,S0030_P03_W05_M1.xml,outputs/T0030
+S0031,T0031,P04,Turn / maneuver,W01,Calm,M0,Nominal,False,,S0031_P04_W01_M0.xml,outputs/T0031
+S0032,T0032,P04,Turn / maneuver,W01,Calm,M1,Faulted,True,Heading or IMU noise,S0032_P04_W01_M1.xml,outputs/T0032
+S0033,T0033,P04,Turn / maneuver,W02,Light wind,M0,Nominal,False,,S0033_P04_W02_M0.xml,outputs/T0033
+S0034,T0034,P04,Turn / maneuver,W02,Light wind,M1,Faulted,True,Heading or IMU noise,S0034_P04_W02_M1.xml,outputs/T0034
+S0035,T0035,P04,Turn / maneuver,W03,Crosswind,M0,Nominal,False,,S0035_P04_W03_M0.xml,outputs/T0035
+S0036,T0036,P04,Turn / maneuver,W03,Crosswind,M1,Faulted,True,Heading or IMU noise,S0036_P04_W03_M1.xml,outputs/T0036
+S0037,T0037,P04,Turn / maneuver,W04,Gust / turbulence,M0,Nominal,False,,S0037_P04_W04_M0.xml,outputs/T0037
+S0038,T0038,P04,Turn / maneuver,W04,Gust / turbulence,M1,Faulted,True,Heading or IMU noise,S0038_P04_W04_M1.xml,outputs/T0038
+S0039,T0039,P04,Turn / maneuver,W05,Low visibility / rain,M0,Nominal,False,,S0039_P04_W05_M0.xml,outputs/T0039
+S0040,T0040,P04,Turn / maneuver,W05,Low visibility / rain,M1,Faulted,True,Heading or IMU noise,S0040_P04_W05_M1.xml,outputs/T0040
+S0041,T0041,P05,Descent,W01,Calm,M0,Nominal,False,,S0041_P05_W01_M0.xml,outputs/T0041
+S0042,T0042,P05,Descent,W01,Calm,M1,Faulted,True,Altimeter bias,S0042_P05_W01_M1.xml,outputs/T0042
+S0043,T0043,P05,Descent,W02,Light wind,M0,Nominal,False,,S0043_P05_W02_M0.xml,outputs/T0043
+S0044,T0044,P05,Descent,W02,Light wind,M1,Faulted,True,Altimeter bias,S0044_P05_W02_M1.xml,outputs/T0044
+S0045,T0045,P05,Descent,W03,Crosswind,M0,Nominal,False,,S0045_P05_W03_M0.xml,outputs/T0045
+S0046,T0046,P05,Descent,W03,Crosswind,M1,Faulted,True,Altimeter bias,S0046_P05_W03_M1.xml,outputs/T0046
+S0047,T0047,P05,Descent,W04,Gust / turbulence,M0,Nominal,False,,S0047_P05_W04_M0.xml,outputs/T0047
+S0048,T0048,P05,Descent,W04,Gust / turbulence,M1,Faulted,True,Altimeter bias,S0048_P05_W04_M1.xml,outputs/T0048
+S0049,T0049,P05,Descent,W05,Low visibility / rain,M0,Nominal,False,,S0049_P05_W05_M0.xml,outputs/T0049
+S0050,T0050,P05,Descent,W05,Low visibility / rain,M1,Faulted,True,Altimeter bias,S0050_P05_W05_M1.xml,outputs/T0050
+S0051,T0051,P06,Approach,W01,Calm,M0,Nominal,False,,S0051_P06_W01_M0.xml,outputs/T0051
+S0052,T0052,P06,Approach,W01,Calm,M1,Faulted,True,Airspeed sensor noise,S0052_P06_W01_M1.xml,outputs/T0052
+S0053,T0053,P06,Approach,W02,Light wind,M0,Nominal,False,,S0053_P06_W02_M0.xml,outputs/T0053
+S0054,T0054,P06,Approach,W02,Light wind,M1,Faulted,True,Airspeed sensor noise,S0054_P06_W02_M1.xml,outputs/T0054
+S0055,T0055,P06,Approach,W03,Crosswind,M0,Nominal,False,,S0055_P06_W03_M0.xml,outputs/T0055
+S0056,T0056,P06,Approach,W03,Crosswind,M1,Faulted,True,Airspeed sensor noise,S0056_P06_W03_M1.xml,outputs/T0056
+S0057,T0057,P06,Approach,W04,Gust / turbulence,M0,Nominal,False,,S0057_P06_W04_M0.xml,outputs/T0057
+S0058,T0058,P06,Approach,W04,Gust / turbulence,M1,Faulted,True,Airspeed sensor noise,S0058_P06_W04_M1.xml,outputs/T0058
+S0059,T0059,P06,Approach,W05,Low visibility / rain,M0,Nominal,False,,S0059_P06_W05_M0.xml,outputs/T0059
+S0060,T0060,P06,Approach,W05,Low visibility / rain,M1,Faulted,True,Airspeed sensor noise,S0060_P06_W05_M1.xml,outputs/T0060
+S0061,T0061,P07,Landing,W01,Calm,M0,Nominal,False,,S0061_P07_W01_M0.xml,outputs/T0061
+S0062,T0062,P07,Landing,W01,Calm,M1,Faulted,True,Landing-gear or braking degradation,S0062_P07_W01_M1.xml,outputs/T0062
+S0063,T0063,P07,Landing,W02,Light wind,M0,Nominal,False,,S0063_P07_W02_M0.xml,outputs/T0063
+S0064,T0064,P07,Landing,W02,Light wind,M1,Faulted,True,Landing-gear or braking degradation,S0064_P07_W02_M1.xml,outputs/T0064
+S0065,T0065,P07,Landing,W03,Crosswind,M0,Nominal,False,,S0065_P07_W03_M0.xml,outputs/T0065
+S0066,T0066,P07,Landing,W03,Crosswind,M1,Faulted,True,Landing-gear or braking degradation,S0066_P07_W03_M1.xml,outputs/T0066
+S0067,T0067,P07,Landing,W04,Gust / turbulence,M0,Nominal,False,,S0067_P07_W04_M0.xml,outputs/T0067
+S0068,T0068,P07,Landing,W04,Gust / turbulence,M1,Faulted,True,Landing-gear or braking degradation,S0068_P07_W04_M1.xml,outputs/T0068
+S0069,T0069,P07,Landing,W05,Low visibility / rain,M0,Nominal,False,,S0069_P07_W05_M0.xml,outputs/T0069
+S0070,T0070,P07,Landing,W05,Low visibility / rain,M1,Faulted,True,Landing-gear or braking degradation,S0070_P07_W05_M1.xml,outputs/T0070
+S0071,T0071,P08,Go-around,W01,Calm,M0,Nominal,False,,S0071_P08_W01_M0.xml,outputs/T0071
+S0072,T0072,P08,Go-around,W01,Calm,M1,Faulted,True,Throttle response delay,S0072_P08_W01_M1.xml,outputs/T0072
+S0073,T0073,P08,Go-around,W02,Light wind,M0,Nominal,False,,S0073_P08_W02_M0.xml,outputs/T0073
+S0074,T0074,P08,Go-around,W02,Light wind,M1,Faulted,True,Throttle response delay,S0074_P08_W02_M1.xml,outputs/T0074
+S0075,T0075,P08,Go-around,W03,Crosswind,M0,Nominal,False,,S0075_P08_W03_M0.xml,outputs/T0075
+S0076,T0076,P08,Go-around,W03,Crosswind,M1,Faulted,True,Throttle response delay,S0076_P08_W03_M1.xml,outputs/T0076
+S0077,T0077,P08,Go-around,W04,Gust / turbulence,M0,Nominal,False,,S0077_P08_W04_M0.xml,outputs/T0077
+S0078,T0078,P08,Go-around,W04,Gust / turbulence,M1,Faulted,True,Throttle response delay,S0078_P08_W04_M1.xml,outputs/T0078
+S0079,T0079,P08,Go-around,W05,Low visibility / rain,M0,Nominal,False,,S0079_P08_W05_M0.xml,outputs/T0079
+S0080,T0080,P08,Go-around,W05,Low visibility / rain,M1,Faulted,True,Throttle response delay,S0080_P08_W05_M1.xml,outputs/T0080
+S0081,T0081,P09,Holding / loiter,W01,Calm,M0,Nominal,False,,S0081_P09_W01_M0.xml,outputs/T0081
+S0082,T0082,P09,Holding / loiter,W01,Calm,M1,Faulted,True,Communication interruption,S0082_P09_W01_M1.xml,outputs/T0082
+S0083,T0083,P09,Holding / loiter,W02,Light wind,M0,Nominal,False,,S0083_P09_W02_M0.xml,outputs/T0083
+S0084,T0084,P09,Holding / loiter,W02,Light wind,M1,Faulted,True,Communication interruption,S0084_P09_W02_M1.xml,outputs/T0084
+S0085,T0085,P09,Holding / loiter,W03,Crosswind,M0,Nominal,False,,S0085_P09_W03_M0.xml,outputs/T0085
+S0086,T0086,P09,Holding / loiter,W03,Crosswind,M1,Faulted,True,Communication interruption,S0086_P09_W03_M1.xml,outputs/T0086
+S0087,T0087,P09,Holding / loiter,W04,Gust / turbulence,M0,Nominal,False,,S0087_P09_W04_M0.xml,outputs/T0087
+S0088,T0088,P09,Holding / loiter,W04,Gust / turbulence,M1,Faulted,True,Communication interruption,S0088_P09_W04_M1.xml,outputs/T0088
+S0089,T0089,P09,Holding / loiter,W05,Low visibility / rain,M0,Nominal,False,,S0089_P09_W05_M0.xml,outputs/T0089
+S0090,T0090,P09,Holding / loiter,W05,Low visibility / rain,M1,Faulted,True,Communication interruption,S0090_P09_W05_M1.xml,outputs/T0090
+S0091,T0091,P10,Emergency landing,W01,Calm,M0,Nominal,False,,S0091_P10_W01_M0.xml,outputs/T0091
+S0092,T0092,P10,Emergency landing,W01,Calm,M1,Faulted,True,Engine degradation with emergency profile,S0092_P10_W01_M1.xml,outputs/T0092
+S0093,T0093,P10,Emergency landing,W02,Light wind,M0,Nominal,False,,S0093_P10_W02_M0.xml,outputs/T0093
+S0094,T0094,P10,Emergency landing,W02,Light wind,M1,Faulted,True,Engine degradation with emergency profile,S0094_P10_W02_M1.xml,outputs/T0094
+S0095,T0095,P10,Emergency landing,W03,Crosswind,M0,Nominal,False,,S0095_P10_W03_M0.xml,outputs/T0095
+S0096,T0096,P10,Emergency landing,W03,Crosswind,M1,Faulted,True,Engine degradation with emergency profile,S0096_P10_W03_M1.xml,outputs/T0096
+S0097,T0097,P10,Emergency landing,W04,Gust / turbulence,M0,Nominal,False,,S0097_P10_W04_M0.xml,outputs/T0097
+S0098,T0098,P10,Emergency landing,W04,Gust / turbulence,M1,Faulted,True,Engine degradation with emergency profile,S0098_P10_W04_M1.xml,outputs/T0098
+S0099,T0099,P10,Emergency landing,W05,Low visibility / rain,M0,Nominal,False,,S0099_P10_W05_M0.xml,outputs/T0099
+S0100,T0100,P10,Emergency landing,W05,Low visibility / rain,M1,Faulted,True,Engine degradation with emergency profile,S0100_P10_W05_M1.xml,outputs/T0100

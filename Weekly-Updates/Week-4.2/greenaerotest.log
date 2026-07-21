@@ -1,0 +1,63 @@
+2026-07-22 00:55:20 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 00:55:20 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 00:55:20 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 00:55:20 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:55:20 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 00:55:20 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\generated
+2026-07-22 00:55:20 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\generated
+2026-07-22 00:55:20 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 00:55:20 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:55:20 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\generated
+2026-07-22 00:55:20 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:56:05 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 00:56:05 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 00:56:05 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 00:56:05 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 00:56:05 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 00:56:05 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 00:56:05 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\generated
+2026-07-22 00:56:05 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\GREENAREOTESTER_BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 01:22:04 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 01:22:04 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 01:22:04 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 01:22:04 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 01:22:04 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 01:22:04 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 01:22:04 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\BACKEND\scenarios\generated
+2026-07-22 01:22:04 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 01:22:04 | INFO     | __main__ | === GreenAeroTest backend | Phase 2: Execution Engine (simulation mode) ===
+2026-07-22 01:22:04 | INFO     | execution.experiment_runner | Loaded 100 scenarios from C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 01:22:04 | INFO     | execution.scheduler | Built execution schedule: 100 scenarios x 10 rounds = 1000 planned executions
+2026-07-22 01:22:04 | INFO     | execution.experiment_runner | Starting execution of 1000 planned runs
+2026-07-22 02:03:54 | INFO     | utils.file_manager | Wrote 1000 rows to C:\Users\Home 12\Music\BACKEND\execution\execution_plan.csv
+2026-07-22 02:03:54 | INFO     | execution.run_manager | Execution plan written: C:\Users\Home 12\Music\BACKEND\execution\execution_plan.csv (1000 rows)
+2026-07-22 02:03:54 | INFO     | execution.experiment_runner | Execution complete: {'total': 1000, 'pass': 1000}
+2026-07-22 02:03:54 | INFO     | __main__ | Phase 2 complete. Execution summary: {'total': 1000, 'pass': 1000}
+2026-07-22 02:06:26 | INFO     | __main__ | === GreenAeroTest backend | Phase 1: Scenario Generation ===
+2026-07-22 02:06:26 | INFO     | __main__ | Simulator: FlightGear | FDM: JSBSim
+2026-07-22 02:06:26 | INFO     | scenarios.scenario_generator | Generating scenario catalog: 10 phases x 5 weather profiles x 2 modes = 100 scenarios
+2026-07-22 02:06:26 | INFO     | scenarios.scenario_generator | Generated 100 scenarios successfully
+2026-07-22 02:06:26 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 02:06:26 | INFO     | utils.file_manager | Wrote 100 rows to C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 02:06:26 | INFO     | scenarios.scenario_generator | Scenario generation outputs written: catalog=C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv, parameters=C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv, generated_files_dir=C:\Users\Home 12\Music\BACKEND\scenarios\generated
+2026-07-22 02:06:26 | INFO     | __main__ | Phase 1 complete. 100 scenarios generated. Catalog: C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv | Parameters: C:\Users\Home 12\Music\BACKEND\scenarios\scenario_parameters.csv
+2026-07-22 02:06:26 | INFO     | __main__ | === GreenAeroTest backend | Phase 2: Execution Engine (simulation mode) ===
+2026-07-22 02:06:26 | INFO     | execution.experiment_runner | Loaded 100 scenarios from C:\Users\Home 12\Music\BACKEND\scenarios\scenario_catalog.csv
+2026-07-22 02:06:26 | INFO     | execution.scheduler | Built execution schedule: 100 scenarios x 10 rounds = 1000 planned executions
+2026-07-22 02:06:26 | INFO     | execution.run_manager | Loaded 1000 existing execution records from C:\Users\Home 12\Music\BACKEND\execution\execution_plan.csv
+2026-07-22 02:06:26 | INFO     | execution.experiment_runner | Resuming from checkpoint: 1000 of 1000 planned runs already completed
+2026-07-22 02:06:26 | INFO     | execution.experiment_runner | Execution already completed. Nothing to run.
+2026-07-22 02:06:26 | INFO     | __main__ | Phase 2 complete. Execution summary: {'total': 1000, 'pass': 1000}
