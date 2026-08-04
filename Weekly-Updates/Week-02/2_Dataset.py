@@ -1,264 +1,504 @@
-"""
-GreenAeroTester - Dataset Page
-=================================
-Gives users a full view of the structured test dataset: summary, statistics,
-search/filter tools, data-quality checks (missing values, duplicates,
-invalid rows), a live preview, CSV export, and distribution charts.
+# ============================================================================
+# GreenAeroTester — shared UI helpers.
+# This block is intentionally IDENTICAL (in spirit) to the one in Home.py —
+# see the note there about why each page reproduces it rather than importing
+# a shared module. This copy is trimmed to only what the Dataset page needs.
+#
+# Phase 9 note (this page): the Dataset page no longer generates or reads any
+# synthetic/dummy dataset (scenario_parameters / test_catalog / test_runs).
+# It reads the SAME uploaded, validated dataset the Home page owns —
+# st.session_state["gat_dataset"] — plus the SAME validation summary Home
+# already computed — st.session_state["gat_validation_summary"] — so every
+# number shown here (missing values, duplicate rows, invalid rows) is
+# derived from the actual uploaded CSV, never recomputed from or replaced by
+# hardcoded data. Whenever a new CSV is uploaded on Home (Upload/Change),
+# this page automatically reflects it on its next render, because it always
+# reads straight out of session state rather than caching anything locally.
+# If no dataset is active (nothing uploaded yet, or the last upload failed
+# validation), this page shows the same locked state as Home instead of any
+# placeholder numbers.
+# ============================================================================
 
-Dummy data stands in for the real linked CSV files described in the SRS
-(test_catalog.csv, scenario_parameters.csv, test_runs.csv, ...).
-"""
-
-import numpy as np
 import pandas as pd
-import plotly.express as px
 import streamlit as st
+import plotly.graph_objects as go
+import streamlit.components.v1 as components
+from utils.theme import apply_theme, get_theme_colors, get_chart_colors, get_chart_type, init_session_defaults
+init_session_defaults()
+COLORS = get_theme_colors()
+CHART_COLORS = get_chart_colors()
+STATUS_COLORS = {
+    "Clean": COLORS["accent"],
+    "Failed": COLORS["danger"],
+    "Timeout": COLORS["amber"],
+    "Crashed": COLORS["purple"],
+}
 
-st.set_page_config(page_title="Dataset | GreenAeroTester", page_icon="🗂️", layout="wide")
-
-THEME_CSS = """
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
-:root { --bg-primary:#0B1120; --bg-surface:#131B2E; --bg-surface-2:#0F1729; --border-color:#1F2A44;
-    --accent-teal:#2DD4BF; --accent-amber:#F59E0B; --accent-danger:#EF4444; --accent-success:#22C55E;
-    --text-primary:#E5E7EB; --text-muted:#94A3B8; }
-html, body, [class*="css"] { font-family:'Inter',sans-serif; }
-.stApp { background-color: var(--bg-primary); }
-section[data-testid="stSidebar"] { background-color: var(--bg-surface-2); border-right:1px solid var(--border-color); }
-.gat-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px; margin-bottom:22px;
-    border-radius:14px; background:linear-gradient(135deg,#0F1729 0%,#131B2E 100%); border:1px solid var(--border-color); }
-.gat-header h1 { color:var(--text-primary); font-size:1.6rem; font-weight:800; margin:0; }
-.gat-header p { color:var(--text-muted); font-size:0.85rem; margin:4px 0 0 0; }
-.gat-badge { font-family:'JetBrains Mono',monospace; font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; letter-spacing:0.03em; }
-.badge-online { background:rgba(34,197,94,0.15); color:var(--accent-success); border:1px solid rgba(34,197,94,0.3); }
-.badge-offline { background:rgba(239,68,68,0.15); color:var(--accent-danger); border:1px solid rgba(239,68,68,0.3); }
-.badge-pending { background:rgba(245,158,11,0.15); color:var(--accent-amber); border:1px solid rgba(245,158,11,0.3); }
-.gat-card { background:var(--bg-surface); border:1px solid var(--border-color); border-radius:14px; padding:16px 18px; height:100%; }
-.gat-card .label { color:var(--text-muted); font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; }
-.gat-card .value { color:var(--text-primary); font-family:'JetBrains Mono',monospace; font-size:1.55rem; font-weight:700; margin:6px 0 2px 0; }
-.gat-section-title { color:var(--text-primary); font-size:1.05rem; font-weight:700; margin:26px 0 12px 0; padding-left:10px; border-left:3px solid var(--accent-teal); }
-.gat-footer { margin-top:40px; padding:16px 0; border-top:1px solid var(--border-color); color:var(--text-muted); font-size:0.75rem; text-align:center; }
-div[data-testid="stMetric"] { background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:14px 16px; }
-div[data-testid="stMetricValue"] { color:var(--text-primary); font-family:'JetBrains Mono',monospace; }
-div[data-testid="stMetricLabel"] { color:var(--text-muted); }
-.stButton>button { background:var(--bg-surface); color:var(--text-primary); border:1px solid var(--border-color); border-radius:10px; font-weight:600; }
-.stButton>button:hover { border-color:var(--accent-teal); color:var(--accent-teal); }
-div[data-testid="stExpander"] { background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; }
-hr { border-color: var(--border-color); }
-</style>
-"""
-st.markdown(THEME_CSS, unsafe_allow_html=True)
-
-PLOTLY_TEMPLATE = "plotly_dark"
-COLOR_SEQ = ["#2DD4BF", "#F59E0B", "#60A5FA", "#F472B6", "#A78BFA", "#4ADE80", "#FCA5A5"]
+PLOTLY_TEMPLATE = COLORS["plotly_template"]
 
 
-def style_fig(fig, height=340):
-    fig.update_layout(
-        template=PLOTLY_TEMPLATE, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter, sans-serif", color="#E5E7EB", size=12),
-        margin=dict(l=10, r=10, t=40, b=10), height=height,
+def inject_css():
+    apply_theme()
+
+
+def sidebar_brand(active_hint: str = ""):
+    with st.sidebar:
+        st.markdown(
+            f"""
+            <div class="gat-brand">
+                <div class="gat-brand-mark">🌱</div>
+                <div class="gat-brand-text">
+                    <div class="gat-brand-title">GreenAeroTester</div>
+                    <div class="gat-brand-sub">ENERGY-AWARE VALIDATION</div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
+def sidebar_lock_notice():
+    """Identical lock UI to Home.py: sidebar/nav stay visible but disabled,
+    with a small explanatory note, whenever there's no active validated
+    dataset (see the Home.py copy of this function for the full rationale)."""
+    with st.sidebar:
+        st.markdown(
+            """
+            <style>
+            [data-testid="stSidebarNav"] {
+                pointer-events: none !important;
+                opacity: 0.45;
+                filter: grayscale(40%);
+            }
+            [data-testid="stSidebarNav"] a { cursor: not-allowed !important; }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            f"""
+            <div style="margin:10px 0 4px 0; padding:10px 12px; border-radius:10px;
+                 border:1px solid {COLORS.get('border', 'rgba(128,128,128,0.25)')};
+                 background:{COLORS.get('bg_elevated', 'rgba(128,128,128,0.08)')};
+                 color:{COLORS['text_faint']}; font-size:12.5px; line-height:1.45;">
+                 No dataset uploaded yet. Please upload a CSV file on the Home page to unlock the application.
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    components.html(
+        """
+        <script>
+        const interceptNav = () => {
+            const doc = window.parent.document;
+            const nav = doc.querySelector('[data-testid="stSidebarNav"]');
+            if (!nav) return;
+            nav.querySelectorAll('a').forEach((link) => {
+                if (link.dataset.gatLocked === "1") return;
+                link.dataset.gatLocked = "1";
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    let toast = doc.getElementById('gat-lock-toast');
+                    if (!toast) {
+                        toast = doc.createElement('div');
+                        toast.id = 'gat-lock-toast';
+                        Object.assign(toast.style, {
+                            position: 'fixed', bottom: '24px', left: '50%',
+                            transform: 'translateX(-50%)', background: '#1f2430',
+                            color: '#fff', padding: '10px 18px', borderRadius: '8px',
+                            fontSize: '13px', fontFamily: 'Inter, sans-serif',
+                            boxShadow: '0 4px 14px rgba(0,0,0,0.35)', zIndex: 99999,
+                            transition: 'opacity 0.3s ease',
+                        });
+                        doc.body.appendChild(toast);
+                    }
+                    toast.textContent = 'Please upload a CSV file to unlock the application.';
+                    toast.style.opacity = '1';
+                    clearTimeout(window.__gatToastTimer);
+                    window.__gatToastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 3000);
+                }, true);
+            });
+        };
+        interceptNav();
+        new MutationObserver(interceptNav).observe(window.parent.document.body, {childList: true, subtree: true});
+        </script>
+        """,
+        height=0,
     )
-    return fig
 
 
-def metric_card(label, value, sub=""):
+def sidebar_status_footer(df, filename=None):
+    total_runs = len(df)
+    total_scn = df["scenario_id"].nunique() if "scenario_id" in df.columns else 0
+    source_label = filename if filename else "uploaded CSV"
+    with st.sidebar:
+        st.markdown(
+            f"""
+            <div class="gat-sidebar-status">
+                <div><span class="gat-dot"></span></div>
+                <div style="margin-top:6px; color:{COLORS['text_faint']}">
+                    {total_scn} scenarios &middot; {total_runs:,} runs<br/>
+                    {source_label}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
+def page_header(eyebrow, title, subtitle, pill_text=None):
+    pill_html = f'<div class="gat-pill">{pill_text}</div>' if pill_text else ""
     st.markdown(
-        f"""<div class="gat-card"><div class="label">{label}</div>
-        <div class="value">{value}</div><div style="color:var(--text-muted);font-size:0.76rem;">{sub}</div></div>""",
+        f"""
+        <div class="gat-header">
+            <div>
+                <div class="gat-eyebrow">{eyebrow}</div>
+                <div class="gat-title">{title}</div>
+                <div class="gat-subtitle">{subtitle}</div>
+            </div>
+            {pill_html}
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
 
-# ----------------------------------------------------------------------------
-# DUMMY DATASET (mirrors the merged/final dataset shape from the SRS)
-# ----------------------------------------------------------------------------
-@st.cache_data
-def generate_full_dataset(n: int = 400, seed: int = 7) -> pd.DataFrame:
-    rng = np.random.default_rng(seed)
-    flight_phases = ["Takeoff", "Climb", "Cruise", "Descent", "Approach", "Landing"]
-    weather = ["Clear", "Windy", "Rain", "Fog", "Storm", "Snow"]
-    fault_types = ["None", "Sensor Fault", "Engine Fault", "Control Surface Fault", "GPS Loss"]
-    safety_levels = ["A", "B", "C", "D"]
-    statuses = ["Clean", "Failed", "Timeout", "Crashed"]
+def section_title(text, tag=None):
+    tag_html = f'<span class="tag">{tag}</span>' if tag else ""
+    st.markdown(f'<div class="gat-section-title">{text} {tag_html}</div>', unsafe_allow_html=True)
 
-    df = pd.DataFrame(
-        {
-            "run_id": [f"R{i:06d}" for i in range(1, n + 1)],
-            "scenario_id": rng.choice([f"S{i:04d}" for i in range(1, 46)], size=n),
-            "test_id": [f"T{i:04d}" for i in rng.integers(1, 260, n)],
-            "flight_phase": rng.choice(flight_phases, size=n),
-            "weather": rng.choice(weather, size=n, p=[0.4, 0.15, 0.15, 0.12, 0.1, 0.08]),
-            "fault_type": rng.choice(fault_types, size=n, p=[0.55, 0.15, 0.12, 0.1, 0.08]),
-            "safety_level": rng.choice(safety_levels, size=n, p=[0.2, 0.3, 0.3, 0.2]),
-            "status": rng.choice(statuses, size=n, p=[0.78, 0.1, 0.07, 0.05]),
-            "mandatory": rng.random(n) < 0.32,
-            "runtime_s": np.clip(rng.normal(180, 45, n), 20, None).round(1),
-            "software_energy_wh": np.clip(rng.normal(1.9, 0.6, n), 0.1, None).round(3),
-        }
+
+def metric_card(label, value, delta=None, accent=None):
+    accent = accent or COLORS["accent"]
+    delta_html = ""
+    if delta is not None:
+        cls = "up" if delta.strip().startswith("+") or delta.strip().startswith("↑") else (
+            "down" if delta.strip().startswith("-") or delta.strip().startswith("↓") else "")
+        delta_html = f'<div class="gat-card-delta {cls}">{delta}</div>'
+    st.markdown(
+        f"""
+        <div class="gat-card" style="--accent-color:{accent}">
+            <div class="gat-card-label">{label}</div>
+            <div class="gat-card-value">{value}</div>
+            {delta_html}
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
-    # Inject realistic data-quality issues for the demo
-    missing_idx = rng.choice(n, size=int(n * 0.05), replace=False)
-    df.loc[missing_idx, "weather"] = np.nan
-    missing_idx2 = rng.choice(n, size=int(n * 0.03), replace=False)
-    df.loc[missing_idx2, "safety_level"] = np.nan
 
-    dup_rows = df.sample(int(n * 0.02), random_state=seed)
-    df = pd.concat([df, dup_rows], ignore_index=True)
-
-    invalid_idx = rng.choice(len(df), size=int(n * 0.02), replace=False)
-    df.loc[invalid_idx, "runtime_s"] = -1  # invalid negative runtime
-
-    return df
+def status_badge_html(status):
+    c = STATUS_COLORS.get(status, COLORS["text_dim"])
+    return f'<span class="gat-badge" style="background:{c}22; color:{c}; border:1px solid {c}55;"><span class="bdot" style="background:{c}"></span>{status}</span>'
 
 
-df = generate_full_dataset()
+def fmt_num(x, decimals=0):
+    return f"{x:,.{decimals}f}"
 
-# ----------------------------------------------------------------------------
-# HEADER
-# ----------------------------------------------------------------------------
-st.markdown(
-    """
-    <div class="gat-header">
-        <div><h1>🗂️ Dataset</h1><p>Structured, linked test dataset covering scenarios, runs, faults, and energy metrics</p></div>
-        <span class="gat-badge badge-pending">DUMMY DATA</span>
-    </div>
-    """,
-    unsafe_allow_html=True,
+
+def apply_plotly_theme(fig, height=380):
+    fig.update_layout(
+        template=PLOTLY_TEMPLATE,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        title=dict(font=dict(color=CHART_COLORS["title"], size=15, family="Space Grotesk, sans-serif")),
+        font=dict(family="Inter, sans-serif", color=CHART_COLORS["text"], size=12),
+        margin=dict(l=10, r=10, t=40, b=10),
+        height=height,
+        legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color=CHART_COLORS["legend"])),
+        xaxis=dict(gridcolor=CHART_COLORS["grid"], zerolinecolor=CHART_COLORS["grid"],
+                   color=CHART_COLORS["axis_label"], tickfont=dict(color=CHART_COLORS["axis_label"])),
+        yaxis=dict(gridcolor=CHART_COLORS["grid"], zerolinecolor=CHART_COLORS["grid"],
+                   color=CHART_COLORS["axis_label"], tickfont=dict(color=CHART_COLORS["axis_label"])),
+    )
+    return fig
+
+
+# ---------------------------------------------------------------------------
+# Flexible column lookup for the two optional dimensions the shared upload
+# validator on Home.py doesn't canonicalize (weather / fault type). Every
+# other column this page uses (run_id, scenario_id, test_id, flight_phase,
+# status, mandatory, safety_level) is already canonicalized by Home's
+# load_and_validate_csv, so they're addressed directly by their canonical
+# name, exactly like Home.py does (has_status, has_flight_phase, etc.).
+# ---------------------------------------------------------------------------
+def _norm(s):
+    return str(s).strip().lower().replace(" ", "_")
+
+
+def _find_column(columns, aliases):
+    normalized = {_norm(c): c for c in columns}
+    for a in aliases:
+        if _norm(a) in normalized:
+            return normalized[_norm(a)]
+    return None
+
+
+WEATHER_ALIASES = ["weather_condition", "weather"]
+FAULT_ALIASES = ["failure_type", "fault_type", "fault"]
+
+
+# ============================================================================
+# PAGE: Dataset Overview (SRS §13.2, §9 cleaning rules)
+#
+# Phase 9: fully CSV-driven. There is exactly one active dataset — the same
+# one Home.py stores in st.session_state["gat_dataset"] once it passes
+# validation — and this page never generates, caches, or falls back to any
+# data of its own. If Home's dataset changes (a new file is uploaded there,
+# via first upload or Change), this page picks it up automatically on its
+# next render since it reads session state fresh every run.
+# ============================================================================
+
+st.set_page_config(page_title="GreenAeroTester — Dataset", page_icon="🗂️",
+                    layout="wide", initial_sidebar_state="expanded")
+inject_css()
+sidebar_brand()
+
+stage = st.session_state.get("gat_stage")
+dataset = st.session_state.get("gat_dataset")
+summary = st.session_state.get("gat_validation_summary")
+
+# ---- Locked state: no active validated dataset. Mirrors Home.py exactly —
+# same sidebar lock notice, same "go upload a CSV" message, nothing below
+# renders (no charts/tables/summaries with stale or placeholder numbers). --
+if stage != "unlocked" or dataset is None:
+    sidebar_lock_notice()
+    page_header(
+        "PHASE 1 · DATASET",
+        "Dataset Overview",
+        "Scenario catalog, parameter distributions and data-quality summary",
+    )
+    if st.session_state.get("gat_invalid_errors"):
+        st.error(
+            "The most recently uploaded file failed validation on the Home page, so no dataset is active. "
+            "Go to Home to upload a corrected CSV."
+        )
+    else:
+        st.info("No dataset uploaded yet. Please upload a CSV file on the Home page to begin.")
+    st.stop()
+
+# ---- Active dataset from here on ------------------------------------------
+df = dataset
+sidebar_status_footer(df, filename=st.session_state.get("gat_active_file"))
+
+page_header(
+    "PHASE 1 · DATASET",
+    "Dataset Overview",
+    "Scenario catalog, parameter distributions and data-quality summary",
+    pill_text=f"{df['scenario_id'].nunique():,} scenarios · {len(df):,} runs",
 )
 
-# ----------------------------------------------------------------------------
-# DATASET SUMMARY
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Dataset Summary</div>', unsafe_allow_html=True)
-s1, s2, s3, s4, s5 = st.columns(5)
-with s1:
-    metric_card("Total Rows", f"{len(df):,}", "merged_energy_metrics.csv")
-with s2:
-    metric_card("Unique Scenarios", f"{df['scenario_id'].nunique()}", "test_catalog.csv")
-with s3:
-    metric_card("Unique Tests", f"{df['test_id'].nunique()}", "linked test IDs")
-with s4:
-    metric_card("Mandatory Tests", f"{int(df['mandatory'].sum())}", "always selected")
-with s5:
-    metric_card("Dataset Version", "v0.1-dummy", "auto-generated preview")
+# ---- Optional-column detection (same pattern as Home.py's has_status etc.) -
+has_flight_phase = "flight_phase" in df.columns
+has_status = "status" in df.columns
+has_safety = "safety_level" in df.columns
+has_mandatory = "mandatory" in df.columns
+has_test_id = "test_id" in df.columns
 
-# ----------------------------------------------------------------------------
-# DATASET STATISTICS
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Dataset Statistics</div>', unsafe_allow_html=True)
-with st.expander("Numeric column statistics", expanded=True):
-    st.dataframe(df[["runtime_s", "software_energy_wh"]].describe().T, use_container_width=True)
+weather_col = _find_column(df.columns, WEATHER_ALIASES)
+fault_col = _find_column(df.columns, FAULT_ALIASES)
+has_weather = weather_col is not None
+has_fault = fault_col is not None
 
-# ----------------------------------------------------------------------------
-# SEARCH + FILTERS
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Search & Filters</div>', unsafe_allow_html=True)
-search_term = st.text_input("🔍 Search by Run ID, Scenario ID, or Test ID")
+# ---- KPI row (from Home's validation summary — never recomputed here) -----
+total_missing = summary["missing_values"]
+duplicate_rows = summary["duplicate_rows"]
+duplicate_run_ids = summary["duplicate_run_ids"]
+duplicate_scenario_ids = summary["duplicate_scenario_ids"]
+invalid_rows = summary["invalid_rows"]
+negative_runtime = summary["negative_runtime"]
+negative_energy = summary["negative_energy"]
 
-f1, f2, f3, f4, f5 = st.columns(5)
-phase_filter = f1.multiselect("Flight Phase", sorted(df["flight_phase"].unique()))
-weather_filter = f2.multiselect("Weather", sorted(df["weather"].dropna().unique()))
-fault_filter = f3.multiselect("Fault Type", sorted(df["fault_type"].unique()))
-safety_filter = f4.multiselect("Safety Level", sorted(df["safety_level"].dropna().unique()))
-status_filter = f5.multiselect("Run Status", sorted(df["status"].unique()))
+c1, c2, c3, c4 = st.columns(4)
+with c1:
+    metric_card("Total Scenarios", fmt_num(df["scenario_id"].nunique()), accent=COLORS["accent2"])
+with c2:
+    metric_card("Missing Values", fmt_num(total_missing),
+                "none found" if total_missing == 0 else "flagged below",
+                accent=COLORS["accent"] if total_missing == 0 else COLORS["amber"])
+with c3:
+    metric_card("Duplicate Rows", fmt_num(duplicate_rows),
+                "SRS §9 rule 1" if duplicate_rows else "none found",
+                accent=COLORS["accent"] if duplicate_rows == 0 else COLORS["danger"])
+with c4:
+    metric_card("Invalid Rows", fmt_num(invalid_rows),
+                "SRS §9 rule 2" if invalid_rows else "none found",
+                accent=COLORS["accent"] if invalid_rows == 0 else COLORS["danger"])
 
-filtered = df.copy()
-if search_term:
-    mask = (
-        filtered["run_id"].str.contains(search_term, case=False, na=False)
-        | filtered["scenario_id"].str.contains(search_term, case=False, na=False)
-        | filtered["test_id"].str.contains(search_term, case=False, na=False)
-    )
-    filtered = filtered[mask]
-if phase_filter:
-    filtered = filtered[filtered["flight_phase"].isin(phase_filter)]
-if weather_filter:
-    filtered = filtered[filtered["weather"].isin(weather_filter)]
-if fault_filter:
-    filtered = filtered[filtered["fault_type"].isin(fault_filter)]
-if safety_filter:
-    filtered = filtered[filtered["safety_level"].isin(safety_filter)]
-if status_filter:
-    filtered = filtered[filtered["status"].isin(status_filter)]
+# ---- Dataset Preview --------------------------------------------------------
+section_title("Dataset Preview", tag=f"{len(df):,} rows total")
+show_full = st.checkbox("Show full dataset instead of the first 20 rows", value=False)
+st.dataframe(df if show_full else df.head(20), use_container_width=True,
+             height=420 if show_full else 320, hide_index=True)
 
-st.caption(f"Showing {len(filtered):,} of {len(df):,} rows after filters.")
+# ---- Distributions --------------------------------------------------------
+section_title("Scenario Composition")
 
-# ----------------------------------------------------------------------------
-# DATA QUALITY: MISSING VALUES / DUPLICATES / INVALID ROWS
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Data Quality</div>', unsafe_allow_html=True)
-dq1, dq2, dq3 = st.columns(3)
+dist_cols = []
+if has_flight_phase:
+    dist_cols.append("phase")
+if has_weather:
+    dist_cols.append("weather")
+if has_fault:
+    dist_cols.append("fault")
+if has_safety:
+    dist_cols.append("safety")
 
-missing_counts = df.isna().sum()
-missing_total = int(missing_counts.sum())
-duplicate_total = int(df.duplicated().sum())
-invalid_total = int((df["runtime_s"] < 0).sum())
+if dist_cols:
+    for i in range(0, len(dist_cols), 2):
+        row = dist_cols[i:i + 2]
+        cols = st.columns(len(row))
+        for kind, col in zip(row, cols):
+            with col:
+                if kind == "phase":
+                    ph = df["flight_phase"].value_counts()
+                    fig = go.Figure(go.Bar(x=ph.values, y=ph.index, orientation="h",
+                                            marker=dict(color=CHART_COLORS["bar"])))
+                    fig.update_layout(title="Flight Phase Distribution")
+                    st.plotly_chart(apply_plotly_theme(fig, 320), use_container_width=True,
+                                     config={"displaylogo": False})
+                elif kind == "weather":
+                    we = df[weather_col].value_counts()
+                    fig = go.Figure(go.Pie(labels=we.index, values=we.values, hole=0.55))
+                    fig.update_traces(marker=dict(colors=CHART_COLORS["pie"]))
+                    fig.update_layout(title="Weather Condition Mix")
+                    st.plotly_chart(apply_plotly_theme(fig, 320), use_container_width=True,
+                                     config={"displaylogo": False})
+                elif kind == "fault":
+                    fa = df[fault_col].value_counts()
+                    fig = go.Figure(go.Bar(x=fa.index, y=fa.values, marker=dict(color=CHART_COLORS["bar"])))
+                    fig.update_layout(title="Fault Type Distribution")
+                    st.plotly_chart(apply_plotly_theme(fig, 300), use_container_width=True,
+                                     config={"displaylogo": False})
+                elif kind == "safety":
+                    sl = df["safety_level"].value_counts()
+                    fig = go.Figure(go.Bar(x=sl.index, y=sl.values, marker=dict(color=CHART_COLORS["line"])))
+                    fig.update_layout(title="Safety Level (DAL) Distribution")
+                    st.plotly_chart(apply_plotly_theme(fig, 300), use_container_width=True,
+                                     config={"displaylogo": False})
+else:
+    st.info("The uploaded CSV doesn't include flight phase, weather, fault type, or safety level columns — "
+            "composition charts aren't available for this dataset.")
 
-with dq1:
-    metric_card("Missing Values", f"{missing_total:,}", "cells across all columns")
-with dq2:
-    metric_card("Duplicate Rows", f"{duplicate_total:,}", "exact duplicate records")
-with dq3:
-    metric_card("Invalid Rows", f"{invalid_total:,}", "e.g. negative runtime")
+# ---- Missing-Value Summary --------------------------------------------------
+section_title("Missing-Value Summary")
+missing_rows = []
+col_missing = df.isna().sum()
+for col, cnt in col_missing.items():
+    if cnt > 0:
+        missing_rows.append({
+            "Column": col, "Missing Count": int(cnt),
+            "Missing %": round(100 * cnt / len(df), 2),
+        })
 
-with st.expander("Missing values by column"):
-    st.dataframe(missing_counts[missing_counts > 0].rename("Missing Count"), use_container_width=True)
-with st.expander("Duplicate rows preview"):
-    st.dataframe(df[df.duplicated(keep=False)].head(20), use_container_width=True, hide_index=True)
-with st.expander("Invalid rows preview (negative runtime)"):
-    st.dataframe(df[df["runtime_s"] < 0], use_container_width=True, hide_index=True)
+if missing_rows:
+    st.dataframe(pd.DataFrame(missing_rows).sort_values("Missing Count", ascending=False),
+                 use_container_width=True, hide_index=True)
+else:
+    st.success("No missing values found in the uploaded dataset.")
 
-# ----------------------------------------------------------------------------
-# DATASET PREVIEW + DOWNLOAD
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Dataset Preview</div>', unsafe_allow_html=True)
-st.dataframe(filtered.head(200), use_container_width=True, hide_index=True)
+# ---- Duplicate-Row Summary ---------------------------------------------------
+section_title("Duplicate-Row Summary")
+dr1, dr2, dr3 = st.columns(3)
+with dr1:
+    metric_card("Duplicate Rows (exact)", fmt_num(duplicate_rows),
+                accent=(COLORS["danger"] if duplicate_rows else COLORS["accent"]))
+with dr2:
+    metric_card("Duplicate run_id", fmt_num(duplicate_run_ids),
+                accent=(COLORS["danger"] if duplicate_run_ids else COLORS["accent"]))
+with dr3:
+    metric_card("Duplicate scenario_id", fmt_num(duplicate_scenario_ids),
+                accent=(COLORS["amber"] if duplicate_scenario_ids else COLORS["accent"]))
+if duplicate_rows == 0 and duplicate_run_ids == 0 and duplicate_scenario_ids == 0:
+    st.success("No duplicate rows, run IDs, or scenario IDs found in the uploaded dataset.")
 
-csv_bytes = filtered.to_csv(index=False).encode("utf-8")
+# ---- Invalid Rows Summary ----------------------------------------------------
+section_title("Invalid Rows Summary")
+invalid_check_rows = [
+    {"Check": "Invalid Rows (runtime/energy missing or negative)", "Count": invalid_rows,
+     "Description": "Rows with a missing/negative runtime_s or software_energy_wh (SRS §9 rule 2)"},
+    {"Check": "Negative Runtime", "Count": negative_runtime,
+     "Description": "Rows with a negative runtime_s value"},
+    {"Check": "Negative Energy", "Count": negative_energy,
+     "Description": "Rows with a negative software_energy_wh value"},
+    {"Check": "Duplicate Run IDs", "Count": duplicate_run_ids,
+     "Description": "Same run_id appearing more than once in the uploaded CSV"},
+    {"Check": "Duplicate Scenario IDs", "Count": duplicate_scenario_ids,
+     "Description": "Same scenario_id appearing more than once in the uploaded CSV"},
+]
+if has_safety:
+    invalid_check_rows.append({
+        "Check": "Missing Safety Level", "Count": int(df["safety_level"].isna().sum()),
+        "Description": "Rows without a DAL safety level assigned",
+    })
+
+invalid_checks = pd.DataFrame(invalid_check_rows)
+invalid_checks["Status"] = invalid_checks["Count"].apply(lambda c: "✅ OK" if c == 0 else "⚠ Flagged")
+st.dataframe(invalid_checks, use_container_width=True, hide_index=True)
+st.caption("Per SRS §9: outliers/invalid rows are flagged here, not silently removed. "
+           "Processed data may exclude these, with the reason documented.")
+
+# ---- Filters + search --------------------------------------------------------
+section_title("Uploaded Dataset Explorer")
+
+filter_defs = []
+if has_flight_phase:
+    filter_defs.append(("flight_phase", "Flight phase", sorted(df["flight_phase"].dropna().unique().tolist())))
+if has_weather:
+    filter_defs.append((weather_col, "Weather", sorted(df[weather_col].dropna().unique().tolist())))
+if has_fault:
+    filter_defs.append((fault_col, "Fault type", sorted(df[fault_col].dropna().unique().tolist())))
+if has_safety:
+    filter_defs.append(("safety_level", "Safety level", sorted(df["safety_level"].dropna().unique().tolist())))
+if has_status:
+    filter_defs.append(("status", "Status", sorted(df["status"].dropna().unique().tolist())))
+
+selections = {}
+for i in range(0, len(filter_defs), 4):
+    row = filter_defs[i:i + 4]
+    cols = st.columns(len(row))
+    for (col_name, label, options), c in zip(row, cols):
+        with c:
+            selections[col_name] = st.multiselect(label, options, default=[], key=f"gat_ds_filter_{col_name}")
+
+fc1, fc2 = st.columns([1, 2])
+with fc1:
+    f_mandatory = (st.selectbox("Mandatory", ["All", "Mandatory only", "Optional only"])
+                   if has_mandatory else "All")
+with fc2:
+    search_hint = "run_id" + (" / scenario_id" ) + (" / test_id" if has_test_id else "")
+    f_search = st.text_input(f"Search by {search_hint}", placeholder="e.g. R000123 or S0250")
+
+view = df.copy()
+for col_name, values in selections.items():
+    if values:
+        view = view[view[col_name].isin(values)]
+if has_mandatory:
+    if f_mandatory == "Mandatory only":
+        view = view[view["mandatory"].astype(bool)]
+    elif f_mandatory == "Optional only":
+        view = view[~view["mandatory"].astype(bool)]
+if f_search:
+    s = f_search.strip().upper()
+    id_cols = ["run_id", "scenario_id"] + (["test_id"] if has_test_id else [])
+    mask = False
+    for col_name in id_cols:
+        mask = mask | view[col_name].astype(str).str.upper().str.contains(s, na=False)
+    view = view[mask]
+
+st.caption(f"Showing {len(view):,} of {len(df):,} rows")
+st.dataframe(view, use_container_width=True, height=380, hide_index=True)
+
 st.download_button(
-    "⬇️ Download Filtered Dataset as CSV",
-    data=csv_bytes,
-    file_name="greenaerotester_dataset_preview.csv",
-    mime="text/csv",
+    "⬇ Download filtered dataset (CSV)", view.to_csv(index=False).encode(),
+    file_name="dataset_filtered.csv", mime="text/csv",
 )
 
-# ----------------------------------------------------------------------------
-# PROFESSIONAL CHARTS
-# ----------------------------------------------------------------------------
-st.markdown('<div class="gat-section-title">Distribution Charts</div>', unsafe_allow_html=True)
-g1, g2 = st.columns(2)
-with g1:
-    fig = px.bar(df["flight_phase"].value_counts(), title="Flight Phase Distribution", color_discrete_sequence=COLOR_SEQ)
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-with g2:
-    fig = px.bar(df["weather"].value_counts(), title="Weather Condition Distribution", color_discrete_sequence=COLOR_SEQ)
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-
-g3, g4 = st.columns(2)
-with g3:
-    fig = px.bar(df["fault_type"].value_counts(), title="Fault Type Distribution", color_discrete_sequence=COLOR_SEQ)
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-with g4:
-    fig = px.bar(df["safety_level"].value_counts().sort_index(), title="Safety Level Distribution", color_discrete_sequence=COLOR_SEQ)
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-
-g5, g6 = st.columns(2)
-with g5:
-    mand_counts = df["mandatory"].value_counts().rename({True: "Mandatory", False: "Optional"})
-    fig = px.pie(names=mand_counts.index, values=mand_counts.values, hole=0.5,
-                 title="Mandatory vs Optional Tests", color_discrete_sequence=["#F59E0B", "#1F2A44"])
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-with g6:
-    fig = px.histogram(df, x="software_energy_wh", nbins=30, title="Software Energy Distribution (Wh)",
-                        color_discrete_sequence=["#2DD4BF"])
-    st.plotly_chart(style_fig(fig), use_container_width=True)
-
-# ----------------------------------------------------------------------------
-# FOOTER
-# ----------------------------------------------------------------------------
 st.markdown(
-    """<div class="gat-footer">GreenAeroTester Dashboard &middot; Dataset</div>""",
+    f"""<div class="gat-footer-note">
+    GreenAeroTester dataset view · driven entirely by the uploaded CSV (<code>{st.session_state.get('gat_active_file', '')}</code>,
+    {len(df):,} rows) · upload a different CSV on the Home page at any time to refresh every chart, filter, and summary here.
+    </div>""",
     unsafe_allow_html=True,
 )

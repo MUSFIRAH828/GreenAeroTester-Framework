@@ -1,0 +1,14 @@
+[theme]
+# Buttons aur active links ka highlight color (Neon Sky Blue)
+primaryColor = "#00D2FF"
+
+# Main Screen ka background (Soft Medium Slate Blue - ab yeh kala nahi lagega)
+backgroundColor = "#243346b8"
+
+# Sidebar ka background color (Main background se milta julta par zyada clean look ke liye)
+secondaryBackgroundColor = "#222f3f3f"
+
+# Sidebar aur dashboard ke poore text ka color (Bilkul bright chamkta hua White)
+textColor = "#FFFFFF"
+
+font = "sans serif"
